@@ -59,9 +59,7 @@ main{padding-top:110px;}
 
 /* station 현황 */
 .parallax-window {background: transparent;}
-.count{
-/*background: url(../img/station_bg.jpg) no-repeat 0 45%;*/
-padding: 340px 0 260px;text-align: center;}
+.count{background: url(../img/station_bg.jpg) no-repeat 0 45%;padding: 340px 0 260px;text-align: center;background-attachment: fixed;}
 .count article{justify-content: space-around;align-items:center;width: 1200px;margin: 0 auto;}
 .count span{font-family:Recipekorea, sans serif;font-size: 70px;margin-bottom: 50px;display: inline-block;}
 .count h1{font-size:24px;}

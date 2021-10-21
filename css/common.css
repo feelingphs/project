@@ -1,6 +1,5 @@
 @charset "utf-8";
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
-@font-face { font-family: 'Recipekorea'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 *{margin:0;padding:0;}
 html,body{width:100%; height:100%;}
@@ -36,6 +35,9 @@ a,input,img{outline:none;selector-dummy:expression(this.hideFocus=true);}
 .color-Org{color:#f88d26;}
 .color-Blue{color:#1981cd;}
 .color-Gr{color:#26ad3f;}
+
+/* background color */
+.main-bg-color{background:#bff;}
 
 
 .flex{display:flex;}

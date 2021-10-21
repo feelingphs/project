@@ -14,15 +14,19 @@ body { text-transform: uppercase; font-size: 18px; color: #000; line-height: 1; 
 
 /* main */
 main { padding-top: 200px; width: 1200px; margin:0 auto; } 
-main h2 { font-size: 40px; font-weight:bold; text-align:center; margin-bottom: 50px; } 
-main section .work { display:flex; margin-bottom: 50px; } 
-main section .work img { width:40%; height: 500px; background: #e8e8e8; } 
+main h2 { font-size: 40px; font-weight:bold; text-align:center; margin-bottom: 50px; display: inline-block; position: relative; left: 50%; transform: translate(-50%, 0); /* z-index: 9; */ } 
+main h2:before { content:''; display:inline-block; background: #bff; width: 100%; height: 16px; border-radius: 10px; position: absolute; bottom: 0px; left: 0; z-index: -1; } 
+main section .work { display:flex; margin-bottom: 50px; justify-content: space-between; } 
+main section .work:nth-child(2n) { flex-direction:row-reverse; } 
 
 main section .work h3 { font-size: 24px; margin-bottom: 10px; } 
-main section .work p { } 
-main section .work dl { display: flex; justify-content: flex-start; margin-top: 10px; } 
-main section .work dl dt { font-weight: bold; flex-grow: 1; } 
-main section .work dl dd { flex-grow: 2; } 
+main section .work .work-thumnail { flex-grow: 1; flex-basis: 300px; } 
+main section .work .work-thumnail img { width:100%; height: 500px; background: #e8e8e8; } 
+main section .work .work-info { flex-grow: 1; flex-basis: 300px; } 
+main section .work .work-info p { } 
+main section .work .work-info dl { display: flex; justify-content: flex-start; margin-top: 10px; } 
+main section .work .work-info dl dt { font-weight: bold; flex-grow: 1; } 
+main section .work .work-info dl dd { flex-grow: 2; } 
 
 
 /* footer */

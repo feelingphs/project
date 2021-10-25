@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
 *{margin:0;padding:0;}
@@ -14,7 +15,7 @@ header,section,nav,article,footer{
 	-> 인식하지 못하는 태그를 인라인으로 인식하기때문에 강제로 블럭으로 설정함*/
 }
 li{list-style:none;}
-body,input{font-size:16px; font-weight:400;font-family:'NanumSquare', sans-serif;}
+body,input{font-size:16px; font-weight:400;font-family:'Lato','NanumSquare', sans-serif;}
 table{border-collapse:collapse;}
 input{vertical-align:middle;}
 img{vertical-align:top;font-size:0;border:0;}

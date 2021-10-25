@@ -41,8 +41,8 @@ a,input,img{outline:none;selector-dummy:expression(this.hideFocus=true);}
 .flex{display:flex;}
 .in-flex{display:inline-flex;}
 
-.floL{float:left;}
-.floR{float:right;}
+.floL{float:left !important;}
+.floR{float:right !important;}
 
 
 

@@ -18,7 +18,7 @@ li{list-style:none;}
 body,input{font-size:16px; font-weight:400;font-family:'Lato','NanumSquare', sans-serif;}
 table{border-collapse:collapse;}
 input{vertical-align:middle;}
-img{vertical-align:top;font-size:0;border:0;}
+fieldset,img{vertical-align:top;font-size:0;border:0;}
 a{text-decoration:none; color:#000;}
 .hidden{display:none;}
 .clr:after{content:"";display:block;clear:both;*zoom:1;  /* IE8 이하버전 대응 */}
@@ -48,8 +48,30 @@ a,input,img{outline:none;selector-dummy:expression(this.hideFocus=true);}
 .floR{float:right;}
 
 
+body { text-transform: uppercase; font-size: 18px; color: #000; line-height: 1; } 
 
+/* skip */
+#skip a { position:absolute; top:0px; left:-9999px; z-index:100; } 
+#skip a:focus, #skip a:active { left:0px; width:100%; text-align:center; padding:10px 0px; background:#004c80; color:#fff; font-weight:bold; } 
 
+/* header */
+#header { width: 100%; height: 80px; background: #fff; position: fixed; z-index: 10; } 
+#header .header-inner { width: 1440px; height: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; } 
+#header .topLogo { flex-grow: 2; flex-shrink: 1; flex-basis: 0; } 
+#header h1 { flex-basis: 180px; margin-right: 20px; font-size: 20px; font-weight:bold; } 
+#header nav { } 
+#header nav a { padding: 5px 10px; margin:0 20px; } 
+#header nav a:hover { color:#000; font-weight:700; } 
+
+/* footer */
+#footer { width:100%; position:relative; background: #fff; text-align:center; } 
+#footer > section { width: 1440px; margin: 0 auto; } 
+
+#footer address { text-align:right; font-size:16px; color: #666; line-height: 24px; } 
+#footer address span { color:#000; } 
+#footer p { font-size:14px; color: #888; padding-top: 10px; border-top: 1px solid #ddd; margin-bottom: 70px; }
+
+.send-email{}
 
 
 

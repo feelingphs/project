@@ -71,7 +71,11 @@ body { text-transform: uppercase; font-size: 18px; color: #000; line-height: 1; 
 #footer address span { color:#000; } 
 #footer p { font-size:14px; color: #888; padding-top: 10px; border-top: 1px solid #ddd; margin-bottom: 70px; }
 
-.send-email{}
+.send-email{background:#f8f8f8;}
+.send-email h2{}
+.send-email > div{}
+.send-email label{}
+.send-email input{}
 
 
 

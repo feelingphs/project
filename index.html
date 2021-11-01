@@ -71,44 +71,9 @@
 		</section>
 	</main>
 	<footer id="footer">
-		<div class="send-email">
-			<h2>Get in touch</h2>
-			<form class="gform" method="POST" data-email="liebe_0208@naver.com" action="https://script.google.com/macros/s/AKfycbwYmaiEW1LS_oBkJKBd1wjQne4CegCXr5Sc07_TepnXHpDajrCt9LNb5hfXEf0c0KTSmQ/exec">
-				<div>
-					<fieldset>
-						<label for="name">Name</label>
-						<input id="name" type="text" name="name">
-					</fieldset>
-					<fieldset>
-						<label for="email">Email</label>
-						<input id="email" type="text" name="email">
-					</fieldset>
-				</div>
-				<fieldset>
-					<label for="message">Message</label>
-					<textarea id="message" name="message"></textarea>
-				</fieldset>
-				<button onClick="return check()">Send</button>
-				<div style="display:none;" class="thankyou_message">
-					<em>메일 전송이 완료되었습니다.</em>
-				</div>
-			</form>
-		</div>
+		
 		<p>포트폴리오</p>
 	</footer>
-	<script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
-	<script>
-		function check() {		
-			alert(document.getElementById("email").value);
-			var email = document.getElementById("email").value;
-			var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-				if(exptext.test(email)==false){
-				//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
-				alert("이 메일형식이 올바르지 않습니다.");
-				document.addjoin.email.focus();
-				return false;
-				}
-		}
-	</script>
+	
 </body>
 </html>

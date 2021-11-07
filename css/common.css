@@ -40,7 +40,7 @@ a,input,img{outline:none;selector-dummy:expression(this.hideFocus=true);}
 /* background color */
 .main-bg-color{background:#bff;}
 
-
+/* 공통 css */
 .flex{display:flex;}
 .in-flex{display:inline-flex;}
 
@@ -64,18 +64,33 @@ body { text-transform: uppercase; font-size: 18px; color: #000; line-height: 1; 
 #header nav a:hover { color:#000; font-weight:700; } 
 
 /* footer */
-#footer { width:100%; position:relative; background: #fff; text-align:center; } 
+#footer {width:100%;position:relative;background: #f8f8f8;text-align:center;} 
 #footer > section { width: 1440px; margin: 0 auto; } 
 
 #footer address { text-align:right; font-size:16px; color: #666; line-height: 24px; } 
 #footer address span { color:#000; } 
-#footer p {font-size:14px;color: #888;padding-top: 10px;padding-bottom: 20px;border-top: 1px solid #ddd;}
+#footer p {font-size:14px;color: #888;padding-top: 10px;padding-bottom: 20px;border-top: 1px solid #ddd;background: #fff;}
 
-.send-email{background:#f8f8f8;}
-.send-email h2{}
+.send-email{background:#f8f8f8;padding: 50px;display: flex;width: 1200px;margin: 0 auto;justify-content: center;}
+.send-email h2{
+    width: 400px;
+}
 .send-email > div{}
-.send-email label{}
-.send-email input{}
+.send-email label{
+    font-size: 18px;
+    line-height: 40px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+.send-email input{
+    border: 0;
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+}
+.send-email textarea{border:0;height: 300px;}
 
 
 

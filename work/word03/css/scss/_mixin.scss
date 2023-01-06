@@ -1,0 +1,41 @@
+// mixin
+@mixin flex-center {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@mixin flex-left {
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+@mixin flex-right {
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+@mixin multiEllipsis($font-size, $line-height, $lines-to-show){
+    display:block;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines-to-show;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+@mixin btn($bg, $color, $width, $height){
+    width:$width;
+    height:$height;
+    background:$bg;
+    color:$color;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    line-height:22px;
+    font-weight:800;
+    cursor:pointer;
+}

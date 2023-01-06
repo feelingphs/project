@@ -1,0 +1,112 @@
+// header
+header{
+    .inner{
+        display:flex;
+        background:#333;
+        z-index:10;
+        width:100%;
+        h1{
+            width:200px;
+            height: 100px;
+            @include flex-center;
+            a{
+                display:inline-block;
+                width:80%;
+            }
+        }
+    }
+}
+
+.gnbmenu{
+    @include flex-left;
+    margin-left:20px;
+    li{
+        flex:0 0 auto;
+        a{
+            color:#fff;
+            padding:16px;
+            width:80%;
+            margin: 0 8px;
+            font-size:16px;
+        }
+    }
+}
+
+// container
+#container{
+    display:flex;
+    width:100%;
+    #lnb{
+        min-width:200px;
+        min-height:calc(100vh - 100px);
+        background:#3f4754;
+        padding:24px;
+        box-sizing:border-box;
+        position:relative;
+        &.close{
+            margin-left:-200px;
+            transition:0.3s ease-in-out;
+        }
+        &.open{
+            margin-left:0;
+            transition:0.3s ease-in-out;
+        }
+    }
+    
+    .content{
+        width:calc(100% - 200px);
+        max-width: 100%;
+        padding:40px;
+        box-sizing:border-box;
+        flex:1;
+        background:#e5e8eb;
+        h1{
+            font-size:24px;
+            margin-bottom:28px;
+        }
+    }
+}
+
+.lnb_switch{
+    $w: 24px;
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    right: -$w;
+    width: $w;
+    height: 48px;
+    background: #fff;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 0 5px 5px 0;
+    &.openBtn{
+        i{
+            transform: rotate(180deg);
+        }
+    }
+
+}
+
+.lnb_view{
+    dl{
+        margin-bottom:16px;
+    }
+    dt{
+        color:#fff;
+        font-size:14px;
+        font-weight:700;
+    }
+    dd{
+        margin-top:8px;
+        &:before{
+            content: '- ';
+            display:inline-block;
+            color:#ccc;
+            margin-right:10px;
+        }
+        a{
+            color:#ccc;
+            font-size:14px;
+        }
+    }
+}

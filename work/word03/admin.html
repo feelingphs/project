@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문통합목록</title>
+
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+    <link rel="stylesheet" href="css/dist/reset.css" />
+    <link rel="stylesheet" href="css/dist/style.css" />
+
+</head>
+<body>
+	</html>
+    <header id="header">
+		<nav class="inner">
+			<h1><a href="#"><img src="imgs/Logo.png" alt="오뚜기 mall"></a></h1>
+			<ul id="gnb" class="gnbmenu">
+				<li class=""><a href="">상점관리</a></li>
+				<li class=""><a href="">전시관리</a></li>
+				<li class=""><a href="">프로모션</a></li>
+				<li class=""><a href="">상품관리</a></li>
+				<li class="active"><a href="">주문/클레임</a></li>
+				<li class=""><a href="">회원관리</a></li>
+				<li class=""><a href="">게시판관리</a></li>
+				<li class=""><a href="">부가서비스</a></li>
+			</ul>
+		</nav>
+	</header>
+    <main id="container">
+        <div id="lnb" class="open">
+			<button class="lnb_switch closeBtn" role="button" id="lnb_switch"><i class="xi-angle-left-min"></i></button>
+			<div class="lnb_view">
+				<dl>
+					<dt>기본설정</dt>
+					<dd class=""><a href="#none" target="">배송요청 문구관리</a></dd>
+					<dd class=""><a href="#none" target="">배송비 부담설정</a></dd>
+				</dl>
+				<dl>
+					<dt>주문통합목록</dt>
+					<dd class="current"><a href="#none" target="">주문통합목록</a></dd>
+				</dl>
+				<dl>
+					<dt>일괄변경관리</dt>
+					<dd class=""><a href="#none" target="">일괄주문상태변경</a></dd>
+					<dd class=""><a href="#none" target="">클레임주문상태변경</a></dd>
+					<dd class=""><a href="#none" target="">환불리스트</a></dd>
+					<dd class=""><a href="#none" target="">추가배송비목록</a></dd>
+					<dd class=""><a href="#none" target="">일괄배송관리</a></dd>
+				</dl>
+				<dl>
+					<dt>주문관리</dt>
+					<dd class=""><a href="#none" target="">입금대기 목록</a></dd>
+					<dd class=""><a href="#none" target="">결제완료 목록</a></dd>
+					<dd class=""><a href="#none" target="">상품준비중 목록</a></dd>
+					<dd class=""><a href="#none" target="">배송중 목록</a></dd>
+					<dd class=""><a href="#none" target="">배송완료 목록</a></dd>
+					<dd class=""><a href="#none" target="">구매확정 목록</a></dd>
+				</dl>
+				<dl>
+					<dt>클레임관리</dt>
+					<dd class=""><a href="#none" target="">취소 진행중</a></dd>
+					<dd class=""><a href="#none" target="">취소 완료</a></dd>
+					<dd class=""><a href="#none" target="">교환 진행중</a></dd>
+					<dd class=""><a href="#none" target="">교환 완료</a></dd>
+					<dd class=""><a href="#none" target="">반품 진행중</a></dd>
+					<dd class=""><a href="#none" target="">반품 완료</a></dd>
+				</dl>
+			
+			</div>
+		</div>
+        <div id="content" class="content">
+			<h1 class="tit_h1">주문통합목록</h1>
+			<section class="search_wrap">
+				<div class="total_search flex_left">
+					<h2 class="tit_h2">전체주문조회</h2>
+					<div class="search_area flex_left">
+						<div class="dropdown_wrap">
+							<div class="dropdown all_search">
+								<button type="button" class="select">선택</button>
+								<ul class="select_option">
+									<li>선택</li>
+									<li>주문번호</li>
+									<li>회원아이디</li>
+									<li>상품명</li>
+								</ul>
+							</div>
+							<div class="input_area">
+								<input type="text" class="inp" id="" name="" title="" placeholder="검색어를 입력하세요.">
+							</div>
+						</div>
+						<div class="btn_wrap">
+							<button type="button" class="btn_pri">Search</button>
+						</div>
+					</div>
+				</div>
+				<div class="detail_search" id="detailSearch">
+					<h2 class="tit_h2">상세조회</h2>
+					<div class="none_box">상세설정영역</div>
+					<!-- <table class="tbl">
+						<caption></caption>
+						<colgroup>
+							<col width="120px">
+							<col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>기간</th>
+								<td>
+									
+								</td>
+							</tr>
+							<tr>
+								<th>주문상태</th>
+								<td class="order_state">
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>결제수단</th>
+								<td>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>주문구분</th>
+								<td>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+									<div class="chkbox_area">
+										<input id="all_chk" name="state" class="inp">
+										<label for="all_chk" name="state">전체</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>카테고리</th>
+								<td>
+									<div class="dropdown">
+										<button type="button" class="select"></button>
+										<ul class="select_option">
+											<li></li>
+											<li></li>
+											<li></li>
+										</ul>
+									</div>
+									<div class="dropdown">
+										<button type="button" class="select"></button>
+										<ul class="select_option">
+											<li></li>
+											<li></li>
+											<li></li>
+										</ul>
+									</div>
+									<div class="dropdown">
+										<button type="button" class="select"></button>
+										<ul class="select_option">
+											<li></li>
+											<li></li>
+											<li></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>결제금액</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>주문경로</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>쿠폰사용</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>회원구분</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>적립금사용</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table> -->
+					<div class="btn_wrap flex_center">
+						<button type="button" class="btn_pri">검색</button>
+						<button type="button" class="btn_sec">초기화</button>
+					</div>
+				</div>
+				<button type="button" id="btnOpen" class="btn_open">Open</button>
+			</section>
+			<section class="tbl_wrap">
+				<div class="btn_wrap mb16">
+					<button type="button" id="gridExport" class="btn_sec btn_export">Excel download</button>
+				</div>
+				<div id="grid" class="grid"></div>
+			</section>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/v3.4.0/tui-pagination.js"></script>
+    <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

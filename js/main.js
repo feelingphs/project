@@ -19,3 +19,12 @@ $(document).ready(function(){
 		}); //strong
 	}); //window
 });
+
+const introText = document.querySelectorAll(".text");
+
+window.onload = () => {
+  let timer = 100;
+  introText.forEach((item) => {
+    item.style.animation = `fade 500ms ${(timer += 50)}ms forwards`;
+  });
+};

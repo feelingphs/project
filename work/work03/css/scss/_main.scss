@@ -1,7 +1,7 @@
 .search_wrap{
     position:relative;
     background:#fff;
-    box-shadow: 0 0 10px 0px #ccc;
+    border:1px solid #ddd;
     padding:0 40px;
     .btn_open{
         $h:24px;
@@ -17,7 +17,7 @@
 .total_search{
     width:70%;
     margin:0 auto;
-    padding:64px 0;
+    padding:40px 0;
     .tit_h2{
         width:160px;
         font-weight:700;
@@ -42,7 +42,6 @@
                 box-sizing:border-box;
                 text-align: left;
                 line-height: 1;
-                cursor:pointer;
                 &:after{
                     content:'';
                     width:1px;
@@ -139,7 +138,7 @@
     padding:40px;
     background:#fff;
     box-sizing:border-box;
-    box-shadow: 0 0 10px 0px #ccc;
+    border:1px solid #ddd;
     .btn_wrap{
         margin-top:0;
     }

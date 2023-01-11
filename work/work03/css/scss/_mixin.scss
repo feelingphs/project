@@ -17,6 +17,12 @@
     align-items:center;
 }
 
+@mixin flex-stretch {
+    display:flex;
+    justify-content:flex-start;
+    align-items:stretch;
+}
+
 @mixin multiEllipsis($font-size, $line-height, $lines-to-show){
     display:block;
     font-size: $font-size;
@@ -37,5 +43,4 @@
     font-size:14px;
     line-height:22px;
     font-weight:800;
-    cursor:pointer;
 }

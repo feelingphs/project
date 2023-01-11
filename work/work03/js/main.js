@@ -230,21 +230,21 @@ btnExport.addEventListener('click', function() {
 
 
 // lnb 열기, 닫기
-const leftMenu = document.getElementById('lnb');
-const switchBtn = document.getElementById('lnb_switch');
+// const leftMenu = document.getElementById('lnb');
+// const switchBtn = document.getElementById('lnb_switch');
 
-switchBtn.addEventListener('click', function(){
-    if(this.classList.contains('openBtn')) {
-        this.classList.replace('openBtn', 'closeBtn');
-        leftMenu.classList.replace('close', 'open');
-    } else {
-        this.classList.replace('closeBtn', 'openBtn');
-        leftMenu.classList.replace('open', 'close');
-    }
-    setInterval(() => {
-        grid.refreshLayout();
-    }, );
-});
+// switchBtn.addEventListener('click', function(){
+//     if(this.classList.contains('openBtn')) {
+//         this.classList.replace('openBtn', 'closeBtn');
+//         leftMenu.classList.replace('close', 'open');
+//     } else {
+//         this.classList.replace('closeBtn', 'openBtn');
+//         leftMenu.classList.replace('open', 'close');
+//     }
+//     setInterval(() => {
+//         grid.refreshLayout();
+//     }, );
+// });
 
 
 
@@ -259,28 +259,28 @@ const slideUp = (target, duration = 300) => {
     target.style.paddingBottom = 0;
     target.style.marginTop = 0;
     target.style.marginBottom = 0;
-  
+
     window.setTimeout(() => {
-      target.style.display = "none";
-      target.style.removeProperty("height");
-      target.style.removeProperty("padding-top");
-      target.style.removeProperty("padding-bottom");
-      target.style.removeProperty("margin-top");
-      target.style.removeProperty("margin-bottom");
-      target.style.removeProperty("overflow");
-      target.style.removeProperty("transition-duration");
-      target.style.removeProperty("transition-property");
+        target.style.display = "none";
+        target.style.removeProperty("height");
+        target.style.removeProperty("padding-top");
+        target.style.removeProperty("padding-bottom");
+        target.style.removeProperty("margin-top");
+        target.style.removeProperty("margin-bottom");
+        target.style.removeProperty("overflow");
+        target.style.removeProperty("transition-duration");
+        target.style.removeProperty("transition-property");
     }, duration);
-  };
+};
   
-  const slideDown = (target, duration = 300) => {
+const slideDown = (target, duration = 300) => {
     target.style.removeProperty("display");
     const computedDisplay = window.getComputedStyle(target).display;
     const display = computedDisplay === "none" ? "block" : computedDisplay;
     target.style.display = display;
-  
+
     const height = target.offsetHeight;
-  
+
     target.style.overflow = "hidden";
     target.style.height = 0;
     target.style.paddingTop = 0;
@@ -296,32 +296,33 @@ const slideUp = (target, duration = 300) => {
     target.style.removeProperty("padding-bottom");
     target.style.removeProperty("margin-top");
     target.style.removeProperty("margin-bottom");
-  
+
     window.setTimeout(() => {
-      target.style.removeProperty("height");
-      target.style.removeProperty("overflow");
-      target.style.removeProperty("transition-duration");
-      target.style.removeProperty("transition-property");
+        target.style.removeProperty("height");
+        target.style.removeProperty("overflow");
+        target.style.removeProperty("transition-duration");
+        target.style.removeProperty("transition-property");
     }, duration);
-  };
+};
   
-  const slideToggle = (target, duration = 300) => {
+const slideToggle = (target, duration = 300) => {
     if (window.getComputedStyle(target).display === "none") {
-      return slideDown(target, duration);
+        return slideDown(target, duration);
     }
-  
+
     return slideUp(target, duration);
-  };
-  
-  window.addEventListener("DOMContentLoaded", () => {
+};
+
+window.addEventListener("DOMContentLoaded", () => {
     const tab = document.querySelector("#btnOpen");
     const tabpanel = document.querySelector("#detailSearch");
     tab.addEventListener("click", (event) => {
-      event.preventDefault();
-      slideToggle(tabpanel, 500);
+        event.preventDefault();
+        slideToggle(tabpanel, 500);
     });
-  });
-  
+});
+
+
 const tooltips = document.querySelectorAll('[data-tooltip]');
 
 tooltips.forEach((trigger) => {

@@ -154,7 +154,7 @@ for (let i = 0; i < row_count; i++) {
         'date': '2023-01-03 15:54:23 <br> 2023-01-03 15:54:23',
         'ordernumber': '2023010357263680 <br> PC',
         'meminfo': '내친구네트웍스',
-        'pdtinfo': '컵밥_전주식돌솥비빔밥(중량) 269G 외 1건 <span data-tooltip="hello world!"><img src="../imgs/test.jpg"></span>',
+        'pdtinfo': '컵밥_전주식돌솥비빔밥(중량) 269G 외 1건',
         'price': '120,940원',
         'shipment': '2,500원',
         'discount': '2,800원',
@@ -322,14 +322,34 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// tooltip
+const table = document.getElementsByClassName('.tui-grid-table');
+const td = document.querySelectorAll('td');
+const tooltip = document.getElementById('tooltip');
 
-const tooltips = document.querySelectorAll('[data-tooltip]');
+for(let i = 0; i < td.length; i++) {
+    const tooltips = td[i].dataset.columnName;
+    const key = Number(td[i].dataset.rowKey) + 1;
 
-tooltips.forEach((trigger) => {
-    let tooltip = document.createElement('div');
+    // 상품정보에 마우스 오버시
+    td[i].addEventListener('mouseover', function(){
+        if(tooltips == 'pdtinfo'){
+            tooltip.style.opacity = '1';
 
-    tooltip.setAttribute('role', 'tooltip');
-    tooltip.setAttribute('inert', true);
-    tooltip.textContent = trigger.dataset.tooltip;
-    trigger.appendChild(tooltip);
-})
+            tooltip.innerHTML = '<div class="tip_img"><img src="../imgs/test0' + key + '.jpg"></div>';
+            tooltip.innerHTML += '<div class="tip_detail"><span class="prdtit">컵밥_전주식돌솥비빔밥</span><span class="price">3,000원</span><span class="state">미입금</span></div>';
+        }
+    });
+
+    // 상품정보에서 마우스가 벗어났을 때
+    td[i].addEventListener('mouseleave', function(){
+        tooltip.innerHTML = '';
+        tooltip.style.opacity = '0';
+    });
+}
+
+// 마우스 위치 따라 tooltip 이동
+document.addEventListener('mousemove', function(e){
+    tooltip.style.left = (e.pageX - 270) + 'px';
+    tooltip.style.top = (e.pageY - 320) + 'px';
+});

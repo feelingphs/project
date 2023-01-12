@@ -139,6 +139,7 @@
     background:#fff;
     box-sizing:border-box;
     border:1px solid #ddd;
+    position:relative;
     .btn_wrap{
         margin-top:0;
     }
@@ -187,3 +188,43 @@
         }
     }
 }
+
+.tooltip{
+    position:absolute;
+    z-index:10;
+    pointer-events:none;
+    opacity:0;
+    padding:8px;
+    background:#f8f8f8;
+    border-radius:8px;
+    width:160px;
+    @include flex-left;
+    gap:8px;
+    .tip_img{
+        img{
+            width:50px;
+            height:50px;
+            background:purple;
+        }
+    }
+    .tip_detail{
+        .prdtit{
+            font-size:12px;
+            color:#333;
+            font-weight:700;
+            display:block;
+        }
+        .price{
+            font-size:12px;
+            color:#333;
+            display:block;
+        }
+        .state{
+            font-size:12px;
+            color:#333;
+            display:block;
+        }
+    }
+}
+
+

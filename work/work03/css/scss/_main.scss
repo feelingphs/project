@@ -21,6 +21,7 @@
     .tit_h2{
         width:160px;
         font-weight:700;
+        font-size:16px;
     }
 }
 .search_area{
@@ -139,7 +140,6 @@
     background:#fff;
     box-sizing:border-box;
     border:1px solid #ddd;
-    position:relative;
     .btn_wrap{
         margin-top:0;
     }
@@ -193,7 +193,7 @@
     position:absolute;
     z-index:10;
     pointer-events:none;
-    opacity:0;
+    opacity:1;
     padding:8px;
     background:#f8f8f8;
     border-radius:8px;

@@ -60,7 +60,7 @@ const columns = [
     {
         header: '상품정보',
         name: 'pdtinfo',
-        minWidth: 256,
+        minWidth: 218,
         whiteSpace: 'normal',
         align: "left",
         formatter: function(e) {
@@ -154,7 +154,7 @@ for (let i = 0; i < row_count; i++) {
         'date': '2023-01-03 15:54:23 <br> 2023-01-03 15:54:23',
         'ordernumber': '2023010357263680 <br> PC',
         'meminfo': '내친구네트웍스',
-        'pdtinfo': '컵밥_전주식돌솥비빔밥(중량) 269G 외 1건',
+        'pdtinfo': '<a href="#none;">컵밥_전주식돌솥비빔밥(중량) 269G 외 1건</a>',
         'price': '120,940원',
         'shipment': '2,500원',
         'discount': '2,800원',
@@ -230,24 +230,24 @@ btnExport.addEventListener('click', function() {
 
 
 // lnb 열기, 닫기
-// const leftMenu = document.getElementById('lnb');
-// const switchBtn = document.getElementById('lnb_switch');
+const leftMenu = document.getElementById('lnb');
+const switchBtn = document.getElementById('lnb_switch');
 
-// switchBtn.addEventListener('click', function(){
-//     if(this.classList.contains('openBtn')) {
-//         this.classList.replace('openBtn', 'closeBtn');
-//         leftMenu.classList.replace('close', 'open');
-//     } else {
-//         this.classList.replace('closeBtn', 'openBtn');
-//         leftMenu.classList.replace('open', 'close');
-//     }
-//     setInterval(() => {
-//         grid.refreshLayout();
-//     }, );
-// });
+switchBtn.addEventListener('click', function(){
+    if(this.classList.contains('openBtn')) {
+        this.classList.replace('openBtn', 'closeBtn');
+        leftMenu.classList.replace('close', 'open');
+    } else {
+        this.classList.replace('closeBtn', 'openBtn');
+        leftMenu.classList.replace('open', 'close');
+    }
+    setInterval(() => {
+        grid.refreshLayout();
+    }, );
+});
 
 
-
+// 상세조건 토글
 const slideUp = (target, duration = 300) => {
     target.style.transitionProperty = "height, margin, padding";
     target.style.transitionDuration = duration + "ms";
@@ -323,33 +323,47 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // tooltip
-const table = document.getElementsByClassName('.tui-grid-table');
-const td = document.querySelectorAll('td');
-const tooltip = document.getElementById('tooltip');
+const pdtInfo = document.querySelectorAll('td');
+const tooltip = document.createElement('div');
+tooltip.classList.add('tooltip');
 
-for(let i = 0; i < td.length; i++) {
-    const tooltips = td[i].dataset.columnName;
-    const key = Number(td[i].dataset.rowKey) + 1;
+for(let i = 0; i < pdtInfo.length; i++) {
+    const tooltips = pdtInfo[i].dataset.columnName;
+    const key = Number(pdtInfo[i].dataset.rowKey) + 1;
 
     // 상품정보에 마우스 오버시
-    td[i].addEventListener('mouseover', function(){
+    pdtInfo[i].addEventListener('mouseover', function(){
         if(tooltips == 'pdtinfo'){
-            tooltip.style.opacity = '1';
-
             tooltip.innerHTML = '<div class="tip_img"><img src="../imgs/test0' + key + '.jpg"></div>';
             tooltip.innerHTML += '<div class="tip_detail"><span class="prdtit">컵밥_전주식돌솥비빔밥</span><span class="price">3,000원</span><span class="state">미입금</span></div>';
+            document.querySelector('.tbl_wrap').append(tooltip);
         }
     });
 
     // 상품정보에서 마우스가 벗어났을 때
-    td[i].addEventListener('mouseleave', function(){
-        tooltip.innerHTML = '';
-        tooltip.style.opacity = '0';
+    pdtInfo[i].addEventListener('mouseleave', function(){
+        tooltip.remove();
     });
 }
 
 // 마우스 위치 따라 tooltip 이동
 document.addEventListener('mousemove', function(e){
-    tooltip.style.left = (e.pageX - 270) + 'px';
-    tooltip.style.top = (e.pageY - 320) + 'px';
+    tooltip.style.left = (e.pageX) + 'px';
+    tooltip.style.top = (e.pageY) + 'px';
+});
+
+// 최상단 이동
+
+window.addEventListener('scroll', function(){
+    let scrollX = this.scrollX;
+    let scrollY = this.scrollY;
+    console.log(scrollX);
+    console.log(scrollY);
+});
+
+const topBtn = document.getElementById('topBtn');
+
+topBtn.addEventListener('click', function(){
+    window.scrollTo({left:0, top:0, behavior: 'smooth'});
+
 });

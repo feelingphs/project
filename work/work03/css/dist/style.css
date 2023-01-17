@@ -1,3 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@font-face {
+  font-family: "SUIT-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf") format("truetype");
+}
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}
+
 /* margin */
 .mt0 {
   margin-top: 0;
@@ -105,7 +137,7 @@ table th {
   align-items: center;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 800;
+  font-weight: 400;
 }
 .btn_sec {
   width: 150px;
@@ -117,7 +149,7 @@ table th {
   align-items: center;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 800;
+  font-weight: 400;
 }
 .btn_th {
   width: 150px;
@@ -129,7 +161,7 @@ table th {
   align-items: center;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 /* flex */
@@ -152,25 +184,30 @@ table th {
   align-items: center;
 }
 
-.cont_wrap {
+body {
+  font-family: "Roboto", "NanumBarunGothic", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.container {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
 }
 
 .lnb {
-  background: #272a33;
+  background: #3c3c3c;
   width: 240px;
+  position: relative;
 }
-.lnb h1 {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.lnb.close {
+  margin-left: -240px;
+  transition: 0.3s ease-in-out;
 }
-.lnb h1 a {
-  width: 60%;
+.lnb.open {
+  margin-left: 0;
+  transition: 0.3s ease-in-out;
 }
 .lnb .lnb_view {
   padding: 24px;
@@ -192,15 +229,17 @@ table th {
   font-weight: 700;
   margin-bottom: 8px;
 }
-.lnb .lnb_view dd {
-  margin-top: 4px;
-  line-height: 18px;
+.lnb .lnb_view dt svg {
+  vertical-align: middle;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: #222;
+  padding: 6px;
 }
-.lnb .lnb_view dd:before {
-  content: "- ";
-  display: inline-block;
-  color: #ccc;
-  margin-right: 10px;
+.lnb .lnb_view dd {
+  margin-top: 8px;
+  line-height: 18px;
+  margin-left: 36px;
 }
 .lnb .lnb_view dd a {
   color: #ccc;
@@ -210,10 +249,24 @@ table th {
 header {
   box-shadow: 0px 5px 7px rgba(39, 42, 51, 0.15);
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header h1 {
+  width: 240px;
+  height: 60px;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 a {
+  width: 60%;
 }
 header .inner {
-  background: #fff;
-  width: 100%;
+  background: #222;
+  width: calc(100% - 240px);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -221,7 +274,7 @@ header .inner {
 header .inner h1 {
   width: 200px;
   height: 60px;
-  background: #272a33;
+  background: #222;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,6 +282,21 @@ header .inner h1 {
 header .inner h1 a {
   display: inline-block;
   width: 60%;
+  color: #fff;
+}
+header .book_area {
+  position: relative;
+  z-index: 10;
+}
+header .book_area .favorite {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: #fff;
+  width: 200px;
+  height: 300px;
+  border-radius: 0 10px 10px 10px;
+  box-shadow: 5px 5px 5px #ddd;
 }
 header .gnbmenu {
   display: flex;
@@ -242,14 +310,13 @@ header .gnbmenu li {
   flex: 0 0 auto;
 }
 header .gnbmenu li.active a {
-  font-weight: 700;
-  color: #00317a;
+  color: #fff;
   position: relative;
 }
 header .gnbmenu li.active a:after {
   content: "";
   height: 3px;
-  background: #00317a;
+  background: #fff;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -264,8 +331,12 @@ header .gnbmenu li.active a:after {
     width: 100%;
   }
 }
+header .gnbmenu li.setting {
+  padding: 0 40px;
+  background: #00317a;
+}
 header .gnbmenu li a {
-  color: #333;
+  color: #fff;
   padding: 21px 8px;
   font-size: 16px;
   display: inline-block;
@@ -274,27 +345,26 @@ header .ico {
   width: 60px;
   height: 60px;
   font-size: 20px;
-  border-right: 1px solid rgba(163, 172, 195, 0.32);
-  color: #a3acc3;
+  border-right: 1px solid rgba(255, 255, 255, 0.32);
+  border-left: 1px solid rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.6);
 }
 header .utilmenu {
   float: right;
+  font-size: 0;
 }
 header .utilmenu .user {
-  border-left: 1px solid rgba(163, 172, 195, 0.32);
+  border-left: 1px solid rgba(255, 255, 255, 0.32);
   border-right: 0;
 }
-#container {
+.content {
   width: calc(100% - 240px);
-}
-#container .content {
-  width: 100%;
-  max-width: 100%;
   padding: 40px;
   box-sizing: border-box;
   background: #f8f8f8;
+  flex: 1;
 }
-#container .content .tit_h1 {
+.content .tit_h1 {
   font-size: 24px;
   margin-bottom: 28px;
 }
@@ -313,6 +383,21 @@ header .utilmenu .user {
 }
 .lnb_switch.openBtn i {
   transform: rotate(180deg);
+}
+
+.topBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  text-align: center;
+  box-shadow: 0px 0px 10px #ddd;
+}
+.topBtn i {
+  font-size: 24px;
 }
 
 .search_wrap {
@@ -334,7 +419,7 @@ header .utilmenu .user {
   align-items: center;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 12px;
   font-weight: 400;
   border-radius: 0 0 6px 6px;
@@ -348,6 +433,7 @@ header .utilmenu .user {
 .total_search .tit_h2 {
   width: 160px;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .search_area {
@@ -457,7 +543,6 @@ header .utilmenu .user {
   background: #fff;
   box-sizing: border-box;
   border: 1px solid #ddd;
-  position: relative;
 }
 .tbl_wrap .btn_wrap {
   margin-top: 0;
@@ -507,7 +592,7 @@ header .utilmenu .user {
   position: absolute;
   z-index: 10;
   pointer-events: none;
-  opacity: 0;
+  opacity: 1;
   padding: 8px;
   background: #f8f8f8;
   border-radius: 8px;

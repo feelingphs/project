@@ -21,6 +21,21 @@ select.addEventListener('click', function(){
     
 // });
 
+class tooltipRenderer{
+    constructor(props) {
+        const tooltip = document.createElement('div');
+
+        this.tooltip = tooltip;
+        this.tooltip.render(props);
+    }
+    render(props){
+        this.tooltip.innerText = 'dd';
+    }
+    getElement() {
+        return this.tooltip;
+    }
+}
+
 //grid
 const row_count = 4000;
 const col_count = 12;
@@ -63,6 +78,9 @@ const columns = [
         minWidth: 218,
         whiteSpace: 'normal',
         align: "left",
+        // renderer: {
+        //     type: tooltipRenderer,
+        // },
         formatter: function(e) {
             return e.value
         },
@@ -170,14 +188,6 @@ for (let i = 0; i < row_count; i++) {
     data.push(row);
 }
 
-// for (let i = 0; i < col_count; i++) {
-//     const name = `c${i}`;
-//     columns.push({ 
-//         name, 
-//         header: name,
-//     });
-// }
-
 const grid = new tui.Grid({
     el: document.getElementById('grid'),
     data: data,
@@ -212,7 +222,38 @@ const grid = new tui.Grid({
         useClient: true,
         perPage: 30 // 페이지당 노출 갯수
     }
-	
+});
+
+// tooltip
+const tooltip = document.createElement('div');
+tooltip.classList.add('tooltip');
+
+grid.on('mouseover', (e) => { // 상품정보에 마우스 오버시
+    const key = e.rowKey + 1;
+    const columnName = e.columnName;
+    if (columnName == 'pdtinfo' && key !== NaN) {
+        if(key < 10){
+            tooltip.innerHTML = '<div class="tip_img"><img src="../imgs/test0' + key + '.jpg"></div>';
+        } else {
+            tooltip.innerHTML = '<div class="tip_img"><img src="../imgs/test' + key + '.jpg"></div>';
+        }
+        tooltip.innerHTML += '<div class="tip_detail"><span class="prdtit">컵밥_전주식돌솥비빔밥</span><span class="price">3,000원</span><span class="state">미입금</span></div>';
+        document.querySelector('.tbl_wrap').append(tooltip);
+
+        // 마우스 위치 따라 tooltip 이동
+        document.addEventListener('mousemove', function(e){
+            tooltip.style.left = (e.pageX) + 'px';
+            tooltip.style.top = (e.pageY) + 'px';
+        });
+    }
+});
+
+grid.on('mouseout', (e) => { // 상품정보에서 마우스가 벗어났을 때
+    const key = e.rowKey;
+    const columnName = e.columnName;
+    if (columnName == 'pdtinfo') {
+        tooltip.parentNode.removeChild(tooltip);
+    }
 });
 
 // 엑셀 다운로드
@@ -322,38 +363,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// tooltip
-const pdtInfo = document.querySelectorAll('td');
-const tooltip = document.createElement('div');
-tooltip.classList.add('tooltip');
-
-for(let i = 0; i < pdtInfo.length; i++) {
-    const tooltips = pdtInfo[i].dataset.columnName;
-    const key = Number(pdtInfo[i].dataset.rowKey) + 1;
-
-    // 상품정보에 마우스 오버시
-    pdtInfo[i].addEventListener('mouseover', function(){
-        if(tooltips == 'pdtinfo'){
-            tooltip.innerHTML = '<div class="tip_img"><img src="../imgs/test0' + key + '.jpg"></div>';
-            tooltip.innerHTML += '<div class="tip_detail"><span class="prdtit">컵밥_전주식돌솥비빔밥</span><span class="price">3,000원</span><span class="state">미입금</span></div>';
-            document.querySelector('.tbl_wrap').append(tooltip);
-        }
-    });
-
-    // 상품정보에서 마우스가 벗어났을 때
-    pdtInfo[i].addEventListener('mouseleave', function(){
-        tooltip.remove();
-    });
-}
-
-// 마우스 위치 따라 tooltip 이동
-document.addEventListener('mousemove', function(e){
-    tooltip.style.left = (e.pageX) + 'px';
-    tooltip.style.top = (e.pageY) + 'px';
-});
-
-// 최상단 이동
-
+// 현재 스크롤 위치
 window.addEventListener('scroll', function(){
     let scrollX = this.scrollX;
     let scrollY = this.scrollY;
@@ -361,6 +371,7 @@ window.addEventListener('scroll', function(){
     console.log(scrollY);
 });
 
+// 최상단 이동
 const topBtn = document.getElementById('topBtn');
 
 topBtn.addEventListener('click', function(){

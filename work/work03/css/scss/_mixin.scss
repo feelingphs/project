@@ -23,6 +23,12 @@
     align-items:stretch;
 }
 
+@mixin flex-between {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
 @mixin multiEllipsis($font-size, $line-height, $lines-to-show){
     display:block;
     font-size: $font-size;

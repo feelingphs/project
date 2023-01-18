@@ -76,9 +76,11 @@ header{
         width:240px;
         height:60px;
         background:$color-bk;
-        @include flex-center;
+        padding:0 24px;
+        box-sizing:border-box;
+        @include flex-between;
         a{
-            width:60%;
+            width:56%;
         }
     }
     .inner{
@@ -189,26 +191,30 @@ header{
     }
 }
 
-
 .lnb_switch{
-    $w: 24px;
-    position:absolute;
-    cursor:pointer;
-    top:0;
-    right: -$w;
-    width: $w;
-    height: 48px;
-    background: #fff;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 0 5px 5px 0;
-    &.openBtn{
-        i{
-            transform: rotate(180deg);
-        }
-    }
-
+    font-size:22px;
+    color:$color-wh;
 }
+
+// .lnb_switch{
+//     $w: 24px;
+//     position:absolute;
+//     cursor:pointer;
+//     top:0;
+//     right: -$w;
+//     width: $w;
+//     height: 48px;
+//     background: #fff;
+//     font-size: 16px;
+//     border: 1px solid #ddd;
+//     border-radius: 0 5px 5px 0;
+//     &.openBtn{
+//         i{
+//             transform: rotate(180deg);
+//         }
+//     }
+
+// }
 
 .topBtn{
     width:48px;

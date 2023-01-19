@@ -1,0 +1,63 @@
+html, body,
+div, span, p, a,
+h1, h2, h3, h4, h5, h6,
+iframe, img, video, audio,
+form, fieldset, label,
+ol, ul, li,
+dl, dt, dd,
+table, tbody, thead, tfoot, tr, th, td,
+section, article, aside, header, footer, nav, address,
+textarea, input, button, select
+canvas, figure,
+strong, b, i{
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+body{
+  min-width:1400px;
+  overflow:auto;
+  color:inherit;
+  font-size:13px;
+  line-height:18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight:400;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+table{
+  border-collapse: collapse;
+  table-layout:fixed;
+}
+
+a {
+  text-decoration: none;
+  color:#333;
+}
+
+img, video {
+  vertical-align: top;
+  width: 100%;
+}
+
+label{
+  cursor:pointer;
+}
+
+input, select, textarea, button{
+  box-sizing:border-box;
+  border-radius:0;
+  background-color:transparent;
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}

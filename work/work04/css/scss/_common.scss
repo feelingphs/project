@@ -1,0 +1,179 @@
+$color-gnb: #34444c;
+$color-lnb: #263238;
+
+$color-act: #26c6da;
+
+$color-wh: #fff;
+$color-bk:#222;
+
+$color-pri: #34444c;
+$color-sec: #3f4754;
+$color-etc: #333;
+
+$font-size-head: 24px;
+$font-size-cont: 16px;
+
+$font-head: '';
+$font-family: 'Roboto', 'NanumBarunGothic', sans-serif;
+
+$url: '../../imgs/';
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+
+/* margin */
+.mt0{margin-top:0;}
+
+.mb0{margin-bottom:0;}
+.mb16{margin-bottom:16px;}
+.mb28{margin-bottom:28px;}
+
+.ml0{margin-left:0;}
+
+.mr0{margin-right:0;}
+
+
+/* padding */
+.pt0{padding-top:0;}
+
+.pb0{padding-bottom:0;}
+
+.pl0{padding-left:0;}
+
+.pr0{padding-right:0;}
+
+/* table */
+table{
+    width:100%;
+
+    tr{
+        text-align:left;
+    }
+    th{
+        font-weight:normal;
+        height:32px;
+    }
+    td{
+
+    }
+}
+
+/* selectbox */
+.dropdown_wrap{
+    display:flex;
+    .select{
+
+    }
+    .select_option{
+        display:none;
+    }
+}
+
+
+/* input */
+.chkbox_area{
+    position:relative;
+    .inp{
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        clip: rect(0, 0, 0, 0);
+        & + label{
+            padding-left:30px;
+            &:before{
+                content:'';
+                position:absolute;
+                top:0;
+                left:0;
+                width:22px;
+                height:22px;
+                border:1px solid #eee;
+                box-sizing:border-box;
+            }
+        }
+    }
+}
+
+/* radio */
+.radio{
+
+}
+
+
+/* button */
+.btn_wrap{
+    @include flex-right;
+    margin-top:40px;
+}
+.btn{
+    &_pri{
+        @include btn($color-pri, $color-wh, 150px, 40px);
+        &:hover, &:focus{
+
+        }
+        &.disbled{
+
+        }
+    }
+    &_sec{
+        @include btn($color-sec, $color-wh, 150px, 40px);
+    }
+    &_third{
+        @include btn($color-sec, $color-wh, 150px, 40px);
+    }
+    &_icon{
+        @include btn($color-sec, $color-wh, 40px, 40px);
+    }
+}
+
+/* flex */
+.flex_center{
+    @include flex-center;
+    gap:8px;
+}
+
+.flex_right{
+    @include flex-right;
+}
+
+.flex_left{
+    @include flex-left;
+}

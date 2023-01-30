@@ -1,20 +1,123 @@
+// 메인 dashboard
+.group_box{
+    background:$color-wh;
+    width:calc(25% - 120px/4);
+    padding:24px;
+    box-sizing:border-box;
+    border:1px solid #ddd;
+    h2{
+        line-height: 32px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #34444c;
+        margin-bottom:24px;
+        i{
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            text-align: center;
+            background: #e7ebef;
+            border-radius: 5px;
+            line-height: 32px;
+            margin-right: 12px;
+            vertical-align: middle;
+            font-weight: 400;
+            color: #34444c;
+        }
+    }
+    dl{
+        @include flex-between;
+        font-size:16px;
+        dd{
+            span{
+                font-size:24px;
+                margin-right: 4px;
+                font-weight: 700;
+                color: rgba(213,56,65,1);
+            }
+        }
+        & + dl{
+            margin-top:24px;
+        }
+    }
+}
+
+.sales{
+    width:calc(50% - 20px);
+    background:$color-wh;
+    height:400px;
+    .chart_wrap{
+        height:calc(100% - 32px - 24px);
+    }
+}
+
+.group_vertical{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    width:calc(50% - 20px);
+    .vertical{
+        width:100%;
+        .group_per{
+            @include flex-between;
+        }
+        dl{
+            @include flex-between;
+            flex:1;
+            padding:0 24px;
+            position:relative;
+            margin-top:0;
+            &::after{
+                content:'';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                margin-top: -5px;
+                width:1px;
+                height:10px;
+                background:#ddd;
+            }
+            &:first-child{
+                padding:0 24px 0 0;
+            }
+            &:last-child{
+                padding:0 0 0 24px;
+                &::after{
+                    display:none;
+                }
+            }
+            dt{
+            }
+            dd{
+                span{
+                    font-size:24px;
+                    margin-right: 4px;
+                    font-weight: 700;
+                    color: rgba(213,56,65,1);
+                }
+            }
+        }
+    }
+}
+
+// 주문/클레임
 .search_wrap{
     position:relative;
     background:#fff;
     border:1px solid #ddd;
+    padding:0 40px;
     .btn_open{
         $h:24px;
         position:absolute;
         right:0;
         bottom:-$h;
         @include btn($color-pri, $color-wh, 56px, $h);
-        font-size:12px;
-        font-weight:400;
+        font-size:20px;
         border-radius:0 0 6px 6px;
     }
 }
 .total_search{
-    width:64%;
+    width:54%;
     margin:0 auto;
     padding:40px 0;
     .tit_h2{
@@ -33,8 +136,8 @@
         width:60%;
         flex:1;
         .all_search{
-            position:relative;
             $w:150px;
+            width:$w;
             .select{
                 width:$w;
                 height:$h;
@@ -42,6 +145,7 @@
                 box-sizing:border-box;
                 text-align: left;
                 line-height: 1;
+                border:0;
                 &:after{
                     content:'';
                     width:1px;
@@ -53,11 +157,12 @@
             }
             .select_option{
                 position:absolute;
-                top:-1px;
+                top:48px;
                 left:-1px;
                 border:1px solid #00317a;
                 width:$w;
-                background:#f8f8f8;
+                background:$color-wh;
+                border-top:1px solid $color-wh;
                 li{
                     cursor:pointer;
                     height: $h;
@@ -69,17 +174,18 @@
         }
         .input_area{
             flex:1;
-            .inp{
+            .text_inp{
                 width:100%;
                 height:$h;
                 line-height:$h;
                 padding:16px;
+                border:0;
             }
         }
     }
     .btn_wrap{
         margin-top:0;
-        .btn_pri{
+        .btn_sec{
             height: $h + 2;
             border:1px solid $color-pri;
         }
@@ -92,16 +198,14 @@
     border-top:1px solid #ddd;
     //height:0;
     //opacity:0;
-    padding:40px;
+    padding:40px 0;
     display:none;
     .none_box{
         width:100%;
-        height:400px;
-        background:#f8f8f8;
+        //background:#f8f8f8;
         margin-top:28px;
-        font-size:18px;
-        text-align:center;
-        line-height:400px;
+        //padding:40px;
+        //box-sizing:border-box;
     }
     &.open{
         height:100%;
@@ -113,24 +217,61 @@
         font-weight:700;
     }
     .tbl{
-        margin-top:32px;
+        border:1px solid #e8e8e8;
+        tr{
+            border-bottom:1px solid #e8e8e8;
+        }
         th{
-            
+            background:#f8f8f8;
+            padding:0 16px;
         }
         td{
-            display:flex;
-            padding:10px 0;
-            .chkbox_area {
-                flex-basis:100px;
+            padding:8px;
+        }
+    }
+}
+
+.chkbox_wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    .chkbox_area {
+        flex-basis:108px;
+    }
+}
+
+.period_wrap{
+    @include flex-left;
+    gap:8px;
+    .period_btnwrap{
+        font-size:0;
+        button{
+            padding:0 4px;
+            border:1px solid #ddd;
+            width:48px;
+            height:32px;
+            margin-left:-1px;
+            &.active{
+                background:$color-act;
+                color:$color-wh;
+                border:1px solid $color-act;
             }
         }
     }
-    .order_state{
-        display:flex;
-        .chkbox_area{
-            flex-basis:90px;
-        }
+    .btn_add{
+        color: $color-wh;
+        border-radius: 50%;
+        background: $color-pri;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+        line-height: 24px;
     }
+}
+
+.radio_wrap{
+    @include flex-left;
+    gap:24px;
 }
 
 // 데이터 테이블

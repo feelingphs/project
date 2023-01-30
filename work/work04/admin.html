@@ -7,7 +7,6 @@
     <title>주문통합목록</title>
 
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
     <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
     <link rel="stylesheet" href="css/dist/reset.css" />
@@ -18,17 +17,27 @@
 	<header>
 		<h1>
 			<a href="#"><img src="imgs/Logo.png" alt="오뚜기 mall"></a>
-			<button class="lnb_switch closeBtn" id="lnb_switch"><i class="xi-bars"></i></button>
+			<button class="lnb_switch closeBtn" id="lnb_switch" aria-label="left menu 접기/펴기 버튼"><i class="ri-menu-line"></i></button>
 		</h1>
 		<nav class="inner">
 			<div class="book_area">
-				<button type="button" class="ico bookmark" id="bookmark"><i class="xi-star-o"></i></button>
-				<ul class="favorite">
-					<li><a href="#none;"></a></li>
-					<li><a href="#none;"></a></li>
-					<li><a href="#none;"></a></li>
-					<li><a href="#none;"></a></li>
-				</ul>
+				<button class="ico bookmark" id="bookmark" aria-label="메뉴 즐겨찾기 버튼"><i class="ri-star-line"></i></button>
+				<div class="favorite" id="favorite">
+					<div class="layer_search">
+						<div class="input_area">
+							<input type="search" id="" name="" class="text_inp" placeholder="메뉴명을 검색하세요.">
+						</div>
+						<button>
+							<i class="ri-search-2-line"></i>
+						</button>
+					</div>
+					<ul class="favorite_list">
+						<li><a href="#none;">입금대기 목록</a><button><i class="ri-close-line"></i></button></li>
+						<li><a href="#none;">취소 진행중</a><button><i class="ri-close-line"></i></button></li>
+						<li><a href="#none;">추가 배송비목록</a><button><i class="ri-close-line"></i></button></li>
+						<li><a href="#none;">주문통합목록</a><button><i class="ri-close-line"></i></button></li>
+					</ul>
+				</div>
 			</div>
 			<ul id="gnb" class="gnbmenu">
 				<li class=""><a href="#none;">상점관리</a></li>
@@ -41,34 +50,19 @@
 				<li class=""><a href="#none;">부가서비스</a></li>
 			</ul>
 			<div class="utilmenu">
-				<button type="button" class="ico user"><i class="xi-bell-o"></i></button>
-				<button type="button" class="ico user"><i class="xi-profile-o"></i></button>
+				<a href="#none;" class="ico user" aria-label="설정 바로가기 버튼"><i class="ri-settings-4-line"></i></a>
+				<a href="#none;" target="_blank" class="ico user" aria-label="쇼핑몰 바로가기 버튼"><i class="ri-store-line"></i></a>
+				<button class="ico user" aria-label="공지사항 바로가기 버튼"><i class="ri-notification-2-line"></i></button>
+				<button class="ico user" aria-label="사용자 바로가기 버튼"><i class="ri-account-circle-line"></i></button>
 			</div>
 		</nav>
 	</header>
     <div id="container" class="container">
         <div id="lnb" class="lnb open">
-			<div class="" style="
-    width: 100%;
-    height: 66px;
-    padding: 14px 24px;
-    box-sizing: border-box;
-"><a href="" style="
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 3px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 13px;
-    border: 1px solid #fff;
-"><i class="ri-shopping-bag-2-line" style="
-    font-size: 18px;
-    margin-right: 4px;
-"></i>Shopping Mall</a></div>
+			<div class="lnb_top">
+				<!-- <a href="#none;"><i class="ri-shopping-bag-2-line"></i>Shopping Mall</a> -->
+				<h1>주문/클레임</h1>
+			</div>
 			<nav class="lnb_view">
 				<div class="lnb_menu active">
 					<a href="#none;" class="menu">
@@ -123,7 +117,7 @@
 			</nav>
 		</div>
 		<main id="content" class="content">
-			<h2 class="tit_h1">주문통합목록</h2>
+			<h2 class="tit_h1">주문통합목록<button class="add_bmark active" aria-label="즐겨찾기 추가/해제 버튼"></button></h2> <!-- 즐겨찾기 추가된 경우 active 추가 -->
 			<div class="main_content">
 				<section class="search_wrap">
 					<div class="total_search flex_left">
@@ -140,206 +134,421 @@
 									</ul>
 								</div>
 								<div class="input_area">
-									<input type="text" class="inp" id="" name="" title="" placeholder="검색어를 입력하세요.">
+									<input type="search" class="text_inp" id="" name="" title="" placeholder="검색어를 입력하세요.">
 								</div>
 							</div>
 							<div class="btn_wrap">
-								<button type="button" class="btn_pri"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z" fill="rgba(255,255,255,1)"/></svg></button>
+								<button type="button" class="btn_sec"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z" fill="rgba(255,255,255,1)"/></svg></button>
 							</div>
 						</div>
 					</div>
 					<div class="detail_search" id="detailSearch">
 						<h2 class="tit_h2">상세조회</h2>
-						<div class="none_box">상세설정영역</div>
-						<!-- <table class="tbl">
-							<caption></caption>
-							<colgroup>
-								<col width="120px">
-								<col width="">
-							</colgroup>
-							<tbody>
-								<tr>
-									<th>기간</th>
-									<td>
-										
-									</td>
-								</tr>
-								<tr>
-									<th>주문상태</th>
-									<td class="order_state">
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<th>결제수단</th>
-									<td>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<th>주문구분</th>
-									<td>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-										<div class="chkbox_area">
-											<input id="all_chk" name="state" class="inp">
-											<label for="all_chk" name="state">전체</label>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<th>카테고리</th>
-									<td>
-										<div class="dropdown">
-											<button type="button" class="select"></button>
-											<ul class="select_option">
-												<li></li>
-												<li></li>
-												<li></li>
-											</ul>
-										</div>
-										<div class="dropdown">
-											<button type="button" class="select"></button>
-											<ul class="select_option">
-												<li></li>
-												<li></li>
-												<li></li>
-											</ul>
-										</div>
-										<div class="dropdown">
-											<button type="button" class="select"></button>
-											<ul class="select_option">
-												<li></li>
-												<li></li>
-												<li></li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<th>결제금액</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>주문경로</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>쿠폰사용</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>회원구분</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>적립금사용</th>
-									<td></td>
-								</tr>
-							</tbody>
-						</table> -->
+						<div class="none_box">
+							<table class="tbl">
+								<caption></caption>
+								<colgroup>
+									<col width="120px">
+									<col width="">
+									<col width="120px">
+									<col width="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3">
+											<div class="chkbox_wrap">
+												<div class="chkbox_area">
+													<input type="checkbox" id="all_chk_state" name="state" class="chkbox_inp">
+													<label for="all_chk_state">전체</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state01" name="state" class="chkbox_inp">
+													<label for="chk_state01">입금전</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state02" name="state" class="chkbox_inp">
+													<label for="chk_state02">결제완료</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state03" name="state" class="chkbox_inp">
+													<label for="chk_state03">상품준비중</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state04" name="state" class="chkbox_inp">
+													<label for="chk_state04">배송대기</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state05" name="state" class="chkbox_inp">
+													<label for="chk_state05">결품대기</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">배송중</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">배송완료</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">구매확정</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">취소신청</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">취소동의</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">취소환불중</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">취소완료</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">취소거절</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">취소거절</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">교환신청</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">교환동의</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">교환상품수령</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">교환상품배송중</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">교환완료</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">교환거절</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">반품신청</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">반품동의</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">반품상품수령</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">반품환불중</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp" checked>
+													<label for="chk_state06">반품완료</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp disabled" disabled>
+													<label for="chk_state06">반품거절</label>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>기간</th>
+										<td colspan="3">
+											<div class="period_wrap">
+												<button class="btn_add" id="btn_add">
+													<i class="ri-add-line"></i>
+												</button>
+												<div class="dropdown_wrap">
+													<div class="dropdown">
+														<button type="button" class="select">선택</button>
+														<ul class="select_option">
+															<li>선택</li>
+															<li>주문일</li>
+															<li>결제완료일</li>
+															<li>상품명</li>
+														</ul>
+													</div>
+												</div>
+												<div class="input_area">
+													<input type="number" id="" name="" class="text_inp">
+												</div>
+												<span>~</span>
+												<div class="input_area">
+													<input type="number" id="" name="" class="text_inp">
+												</div>
+												<div class="period_btnwrap">
+													<button class="active">오늘</button>
+													<button>어제</button>
+													<button>3일</button>
+													<button>7일</button>
+													<button>1개월</button>
+													<button>3개월</button>
+													<button>6개월</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>결제수단</th>
+										<td colspan="3">
+											<div class="chkbox_wrap">
+												<div class="chkbox_area">
+													<input type="checkbox" id="all_chk_method" name="method" class="chkbox_inp">
+													<label for="all_chk_method">전체</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_method01" name="method" class="chkbox_inp">
+													<label for="chk_method01">state01</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_method02" name="method" class="chkbox_inp">
+													<label for="chk_method02">state02</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_method03" name="method" class="chkbox_inp">
+													<label for="chk_method03">state03</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_method04" name="method" class="chkbox_inp">
+													<label for="chk_method04">state04</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_method05" name="method" class="chkbox_inp">
+													<label for="chk_method05">state05</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_method06" name="method" class="chkbox_inp">
+													<label for="chk_method06">state06</label>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>주문구분</th>
+										<td colspan="3">
+											<div class="chkbox_wrap">
+												<div class="chkbox_area">
+													<input type="checkbox" id="all_chk" name="state" class="chkbox_inp">
+													<label for="all_chk">전체</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state01" name="state" class="chkbox_inp">
+													<label for="chk_state01">state01</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state02" name="state" class="chkbox_inp">
+													<label for="chk_state02">state02</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state03" name="state" class="chkbox_inp">
+													<label for="chk_state03">state03</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state04" name="state" class="chkbox_inp">
+													<label for="chk_state04">state04</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state05" name="state" class="chkbox_inp">
+													<label for="chk_state05">state05</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
+													<label for="chk_state06">state06</label>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>카테고리</th>
+										<td colspan="3">
+											<div class="dropdown_wrap">
+												<div class="dropdown">
+													<button type="button" class="select">선택</button>
+													<ul class="select_option">
+														<li>선택</li>
+														<li>주문일</li>
+														<li>결제완료일</li>
+														<li>상품명</li>
+													</ul>
+												</div>
+												<div class="dropdown">
+													<button type="button" class="select">선택</button>
+													<ul class="select_option">
+														<li>선택</li>
+														<li>주문일</li>
+														<li>결제완료일</li>
+														<li>상품명</li>
+													</ul>
+												</div>
+												<div class="dropdown">
+													<button type="button" class="select">선택</button>
+													<ul class="select_option">
+														<li>선택</li>
+														<li>주문일</li>
+														<li>결제완료일</li>
+														<li>상품명</li>
+													</ul>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>주문금액</th>
+										<td>
+											<div class="period_wrap">
+												<div class="input_area">
+													<input type="number" id="" name="" class="text_inp">
+												</div>
+												원
+												<span>~</span>
+												<div class="input_area">
+													<input type="number" id="" name="" class="text_inp">
+												</div>
+												원
+											</div>
+										</td>
+										<th>결제금액</th>
+										<td>
+											<div class="period_wrap">
+												<div class="input_area">
+													<input type="number" id="" name="" class="text_inp">
+												</div>
+												원
+												<span>~</span>
+												<div class="input_area">
+													<input type="number" id="" name="" class="text_inp">
+												</div>
+												원
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>주문경로</th>
+										<td>
+											<div class="radio_wrap">
+												<div class="radio_area">
+													<input type="radio" id="ty_path_all" name="path_ty" class="radio_inp" checked>
+													<label for="ty_path_all">전체</label>
+												</div>
+												<div class="radio_area">
+													<input type="radio" id="ty_pc" name="path_ty" class="radio_inp">
+													<label for="ty_pc">PC</label>
+												</div>
+												<div class="radio_area">
+													<input type="radio" id="ty_mb" name="path_ty" class="radio_inp" disabled>
+													<label for="ty_mb">Mobile</label>
+												</div>
+											</div>
+										</td>
+										<th>회원구분</th>
+										<td>
+											<div class="radio_wrap">
+												<div class="radio_area">
+													<input type="radio" id="ty_mem_all" name="mem_ty" class="radio_inp" checked>
+													<label for="ty_mem_all">전체</label>
+												</div>
+												<div class="radio_area">
+													<input type="radio" id="ty_mem" name="mem_ty" class="radio_inp">
+													<label for="ty_mem">회원</label>
+												</div>
+												<div class="radio_area">
+													<input type="radio" id="ty_mem_none" name="mem_ty" class="radio_inp">
+													<label for="ty_mem_none">비회원</label>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>쿠폰사용</th>
+										<td>
+											<div class="chkbox_wrap">
+												<div class="chkbox_area">
+													<input type="checkbox" id="ty_cp_prd" name="coupon_ty" class="chkbox_inp">
+													<label for="ty_cp_prd">상품</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="ty_cp_basket" name="coupon_ty" class="chkbox_inp">
+													<label for="ty_cp_basket">장바구니</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="ty_cp_shipment" name="coupon_ty" class="chkbox_inp">
+													<label for="ty_cp_shipment">배송비</label>
+												</div>
+												<div class="chkbox_area">
+													<input type="checkbox" id="ty_cp_none" name="coupon_ty" class="chkbox_inp">
+													<label for="ty_cp_none">미사용</label>
+												</div>
+											</div>
+										</td>
+										<th>적립금사용</th>
+										<td>
+											<div class="radio_wrap">
+												<div class="radio_area">
+													<input type="radio" id="ty_point_all" name="path_ty" class="radio_inp" checked>
+													<label for="ty_point_all">전체</label>
+												</div>
+												<div class="radio_area">
+													<input type="radio" id="ty_point_use" name="path_ty" class="radio_inp">
+													<label for="ty_point_use">사용</label>
+												</div>
+												<div class="radio_area">
+													<input type="radio" id="ty_point_none" name="path_ty" class="radio_inp">
+													<label for="ty_point_none">미사용</label>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
 						<div class="btn_wrap flex_center">
-							<button type="button" class="btn_pri">검색</button>
-							<button type="button" class="btn_sec">초기화</button>
+							<button type="button" class="btn_pri" aria-label="검색 버튼">검색</button>
+							<button type="reset" class="btn_sec" aria-label="초기화 버튼">초기화</button>
 						</div>
 					</div>
-					<button type="button" id="btnOpen" class="btn_open"><i class="xi-angle-down-thin"></i></button>
+					<button type="button" id="btnOpen" class="btn_open" aria-label="상세검색 영역 펼치기/닫기"><i class="ri-arrow-down-s-line"></i></button>
 				</section>
 				<section class="tbl_wrap">
 					<div class="btn_wrap mb16">
-						<button type="button" id="gridExport" class="btn_icon btn_export" title="excel download">
+						<button type="button" id="gridExport" class="btn_icon btn_export" title="엑셀 다운로드 버튼" aria-label="엑셀 다운로드 버튼">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 								<path fill="none" d="M0 0h24v24H0z"/><path d="M2.859 2.877l12.57-1.795a.5.5 0 0 1 .571.495v20.846a.5.5 0 0 1-.57.495L2.858 21.123a1 1 0 0 1-.859-.99V3.867a1 1 0 0 1 .859-.99zM4 4.735v14.53l10 1.429V3.306L4 4.735zM17 19h3V5h-3V3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4v-2zm-6.8-7l2.8 4h-2.4L9 13.714 7.4 16H5l2.8-4L5 8h2.4L9 10.286 10.6 8H13l-2.8 4z" fill="rgba(255,255,255,1)"/>
 							</svg>
 						</button>
 					</div>
 					<div id="grid" class="grid"></div>
-					<!-- <div id="tooltip" class="tooltip"></div> -->
 				</section>
 			</div>
 		</main>
 	</div>
-	<button class="topBtn" id="topBtn"><i class="xi-angle-up-min"></i></button>
+	<button class="topBtn" id="topBtn" aria-label="최상단 이동 버튼"><i class="ri-arrow-up-s-line"></i></button>
 
+	<div class="dimmed" id="dimmed"></div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
     <script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/v3.4.0/tui-pagination.js"></script>
-    <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+    <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>	
     <script src="js/main.js"></script>
+	<script src="js/grid.js"></script>
 </body>
 </html>

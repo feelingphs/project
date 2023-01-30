@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문통합목록</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+    <link rel="stylesheet" href="css/dist/reset.css" />
+    <link rel="stylesheet" href="css/dist/style.css" />
+
+</head>
+<body>
+	<header>
+		<h1>
+			<a href="#"><img src="imgs/Logo.png" alt="오뚜기 mall"></a>
+			<button class="lnb_switch closeBtn" id="lnb_switch" aria-label="left menu 접기/펴기 버튼"><i class="ri-menu-line"></i></button>
+		</h1>
+		<nav class="inner">
+			<div class="book_area">
+				<button type="button" class="ico bookmark" id="bookmark" aria-label="메뉴 즐겨찾기 버튼"><i class="ri-star-line"></i></button>
+				<ul class="favorite" id="favorite">
+					<li><a href="#none;"></a></li>
+					<li><a href="#none;"></a></li>
+					<li><a href="#none;"></a></li>
+					<li><a href="#none;"></a></li>
+				</ul>
+			</div>
+			<ul id="gnb" class="gnbmenu">
+				<li class=""><a href="#none;">상점관리</a></li>
+				<li class=""><a href="#none;">전시관리</a></li>
+				<li class=""><a href="#none;">프로모션</a></li>
+				<li class=""><a href="#none;">상품관리</a></li>
+				<li class=""><a href="#none;">주문/클레임</a></li>
+				<li class=""><a href="#none;">회원관리</a></li>
+				<li class=""><a href="#none;">게시판관리</a></li>
+				<li class=""><a href="#none;">부가서비스</a></li>
+			</ul>
+			<div class="utilmenu">
+				<button type="button" class="ico user" aria-label="설정 바로가기 버튼"><i class="ri-settings-4-line"></i></button>
+				<button type="button" class="ico user" aria-label="쇼핑몰 바로가기 버튼"><i class="ri-store-line"></i></button>
+				<button type="button" class="ico user" aria-label="공지사항 바로가기 버튼"><i class="ri-notification-2-line"></i></button>
+				<button type="button" class="ico user" aria-label="사용자 바로가기 버튼"><i class="ri-account-circle-line"></i></button>
+			</div>
+		</nav>
+	</header>
+    <div id="container" class="container">
+		<main id="content" class="content">
+			<div class="dashboard">
+				<section class="group_box">
+					<h2><i class="ri-draft-line"></i>주문</h2>
+					<div class="group_per">
+						<dl>
+							<dt>입금대기</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>결제완료</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="group_box">
+					<h2><i class="ri-truck-line"></i>배송</h2>
+					<div class="group_per">
+						<dl>
+							<dt>상품준비중</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>배송중</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>배송완료</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>구매확정</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="group_box">
+					<h2><i class="ri-message-3-line"></i>클레임</h2>
+					<div class="group_per">
+						<dl>
+							<dt>취소요청</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>반품요청</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>교환요청</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="group_box">
+					<h2><i class="ri-edit-line"></i>문의</h2>
+					<div class="group_per">
+						<dl>
+							<dt>상품문의</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>1:1 문의</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>상품리뷰</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="group_box sales">
+					<h2><i class="ri-bar-chart-box-line"></i>매출 현황</h2>
+					<div class="chart_wrap">
+						<canvas id="chart" aria-label="매출 현황 그래프"></canvas>
+					</div>
+				</section>
+				<div class="group_vertical">
+					<section class="group_box vertical">
+						<h2><i class="ri-user-line"></i>가입현황</h2>
+						<div class="group_per">
+							<dl>
+								<dt>신규가입자</dt>
+								<dd><span>0</span>건</dd>
+							</dl>
+							<dl>
+								<dt>총가입자</dt>
+								<dd><span>13</span>건</dd>
+							</dl>
+							<dl>
+								<dt>휴면전환대상</dt>
+								<dd><span>13</span>건</dd>
+							</dl>
+						</div>
+					</section>
+					<section class="group_box vertical">
+						<h2><i class="ri-survey-line"></i>상품현황</h2>
+						<div class="group_per">
+							<dl>
+								<dt>판매중</dt>
+								<dd><span>13</span>건</dd>
+							</dl>
+							<dl>
+								<dt>일시품절</dt>
+								<dd><span>13</span>건</dd>
+							</dl>
+							<dl>
+								<dt>판매종료</dt>
+								<dd><span>13</span>건</dd>
+							</dl>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+	</div>
+	<button class="topBtn" id="topBtn" aria-label="최상단 이동 버튼"><i class="ri-arrow-up-s-line"></i></button>
+
+	<div class="dimmed"></div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="js/chart.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

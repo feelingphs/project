@@ -50,7 +50,7 @@ switchBtn.addEventListener('click', function(){
 // lnb 아코디언 메뉴
 const menu = document.querySelectorAll('.menu');
 menu.forEach(function(menu){
-        menu.addEventListener('click', function(e){
+    menu.addEventListener('click', function(e){
         const parent = e.target.parentNode;
         const ul = parent.querySelector('.depth');
 
@@ -73,7 +73,7 @@ const select = document.querySelectorAll('.select');
 select.forEach(function(select){
     const option = select.nextElementSibling;
     select.addEventListener('click', function(){
-        slideDown(option, 300);
+        slideToggle(option, 300);
     });
 });
 
@@ -145,11 +145,54 @@ const slideToggle = (target, duration = 300) => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-    const tab = document.querySelector("#btnOpen");
-    const tabpanel = document.querySelector("#detailSearch");
-    tab.addEventListener("click", (event) => {
+    const btnOpen = document.querySelector("#btnOpen");
+    const detailSearch = document.querySelector("#detailSearch");
+    btnOpen.addEventListener("click", (event) => {
         event.preventDefault();
-        slideToggle(tabpanel, 500);
+        slideToggle(detailSearch, 500);
     });
 });
 
+// 상세조회 내 기간 설정
+const btnAdd = document.getElementById('btn_add');
+const period = document.getElementById('period');
+
+let periodDummy = '';
+periodDummy += '<div class="period_wrap">';
+periodDummy += '    <button class="btn_del" id="btn_del" aria-label="기간 삭제 버튼"></button>';
+periodDummy += '    <div class="dropdown_wrap">';
+periodDummy += '        <div class="dropdown sm">';
+periodDummy += '            <button type="button" class="select">선택</button>';
+periodDummy += '            <ul class="select_option">';
+periodDummy += '                <li>주문일</li>';
+periodDummy += '                <li>결제완료일</li>';
+periodDummy += '                <li>상품명</li>';
+periodDummy += '            </ul>';
+periodDummy += '        </div>';
+periodDummy += '    </div>';
+periodDummy += '    <div class="input_area">';
+periodDummy += '        <input type="number" id="" name="" class="text_inp">';
+periodDummy += '    </div>';
+periodDummy += '    <span>~</span>';
+periodDummy += '    <div class="input_area">';
+periodDummy += '        <input type="number" id="" name="" class="text_inp">';
+periodDummy += '    </div>';
+periodDummy += '    <div class="period_btnwrap">';
+periodDummy += '        <button class="active">오늘</button>';
+periodDummy += '        <button>어제</button>';
+periodDummy += '        <button>3일</button>';
+periodDummy += '        <button>7일</button>';
+periodDummy += '        <button>1개월</button>';
+periodDummy += '        <button>3개월</button>';
+periodDummy += '        <button>6개월</button>';
+periodDummy += '    </div>';
+periodDummy += '</div>';
+
+document.addEventListener('click', function(e){
+    if(e.target && e.target.id == 'btn_add'){
+        period.innerHTML += periodDummy;
+    }
+    if(e.target && e.target.id == 'btn_del'){
+        e.target.parentNode.remove();
+    }
+});

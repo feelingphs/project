@@ -1,41 +1,64 @@
 // mixin
-@mixin flex-center {
+@mixin flex-row($align:center, $justify: center) {
     display:flex;
-    justify-content:center;
-    align-items:center;
+    flex-direction:row;
+
+    @if ($align == start) {
+        align-items:flex-start;
+    } @else if ($align == start) {
+        align-items:flex-end;
+    } @else if ($align == stretch) {
+        align-items:stretch;
+    } @else {
+        align-items:center;
+    }
+
+    @if ($justify == between) {
+        justify-content:space-between;
+    } @else if ($justify == start) {
+        justify-content:flex-start;
+    } @else if ($justify == end) {
+        justify-content:flex-end;
+    } @else if ($justify == center) {
+        justify-content:center;
+    }
 }
 
-@mixin flex-left {
+@mixin flex-column($align:center, $justify: center) {
     display:flex;
-    justify-content:flex-start;
-    align-items:center;
+    flex-direction:column;
+
+    @if ($align == start) {
+        align-items:flex-start;
+    } @else if ($align == start) {
+        align-items:flex-end;
+    } @else {
+        align-items:center;
+    }
+
+    @if ($justify == between) {
+        justify-content:space-between;
+    } @else if ($justify == start) {
+        justify-content:flex-start;
+    } @else if ($justify == end) {
+        justify-content:flex-end;
+    } @else if ($justify == center) {
+        justify-content:center;
+    }
 }
 
-@mixin flex-right {
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-}
-
-@mixin flex-stretch {
-    display:flex;
-    justify-content:flex-start;
-    align-items:stretch;
-}
-
-@mixin flex-between {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-@mixin multiEllipsis($font-size, $line-height, $lines-to-show){
-    display:block;
-    font-size: $font-size;
-    line-height: $line-height;
-    -webkit-line-clamp: $lines-to-show;
-    overflow:hidden;
-    text-overflow:ellipsis;
+@mixin ellipsis($lines: 1) {
+    @if ($lines == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
 }
 
 @mixin btn($bg, $color, $width, $height){

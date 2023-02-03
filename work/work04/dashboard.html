@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주문통합목록</title>
+    <title>관리자 - 대시보드</title>
 
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
@@ -16,7 +16,7 @@
 <body>
 	<header>
 		<h1>
-			<a href="#"><img src="imgs/Logo.png" alt="오뚜기 mall"></a>
+			<a href="dashboard.html"><img src="imgs/Logo.png" alt="NCGN 로고"></a>
 			<button class="lnb_switch closeBtn" id="lnb_switch" aria-label="left menu 접기/펴기 버튼"><i class="ri-menu-line"></i></button>
 		</h1>
 		<nav class="inner">
@@ -124,42 +124,40 @@
 						<canvas id="chart" aria-label="매출 현황 그래프"></canvas>
 					</div>
 				</section>
-				<div class="group_vertical">
-					<section class="group_box vertical">
-						<h2><i class="ri-user-line"></i>가입현황</h2>
-						<div class="group_per">
-							<dl>
-								<dt>신규가입자</dt>
-								<dd><span>0</span>건</dd>
-							</dl>
-							<dl>
-								<dt>총가입자</dt>
-								<dd><span>13</span>건</dd>
-							</dl>
-							<dl>
-								<dt>휴면전환대상</dt>
-								<dd><span>13</span>건</dd>
-							</dl>
-						</div>
-					</section>
-					<section class="group_box vertical">
-						<h2><i class="ri-survey-line"></i>상품현황</h2>
-						<div class="group_per">
-							<dl>
-								<dt>판매중</dt>
-								<dd><span>13</span>건</dd>
-							</dl>
-							<dl>
-								<dt>일시품절</dt>
-								<dd><span>13</span>건</dd>
-							</dl>
-							<dl>
-								<dt>판매종료</dt>
-								<dd><span>13</span>건</dd>
-							</dl>
-						</div>
-					</section>
-				</div>
+				<section class="group_box vertical">
+					<h2><i class="ri-user-line"></i>가입현황</h2>
+					<div class="group_per">
+						<dl>
+							<dt>신규가입자</dt>
+							<dd><span>0</span>건</dd>
+						</dl>
+						<dl>
+							<dt>총가입자</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>휴면전환대상</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="group_box vertical">
+					<h2><i class="ri-survey-line"></i>상품현황</h2>
+					<div class="group_per">
+						<dl>
+							<dt>판매중</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>일시품절</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+						<dl>
+							<dt>판매종료</dt>
+							<dd><span>13</span>건</dd>
+						</dl>
+					</div>
+				</section>
 			</div>
 		</main>
 	</div>

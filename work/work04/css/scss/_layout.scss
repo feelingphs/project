@@ -7,14 +7,14 @@ body{
 // gnb
 header{
     position:relative;
-    @include flex-left;
+    @include flex-row;
     h1{
         width:220px;
         height:60px;
         background:$color-gnb;
         padding:0 24px;
         box-sizing:border-box;
-        @include flex-between;
+        @include flex-row(center, between);
         a{
             width:48%;
         }
@@ -22,13 +22,13 @@ header{
     .inner{
         background:$color-gnb;
         width:calc(100% - 240px);
-        @include flex-left;
+        @include flex-row(start, center);
         flex:1;
         h1{
             width:200px;
             height: 60px;
             background:$color-bk;
-            @include flex-center;
+            @include flex-row;
             a{
                 display:inline-block;
                 width:60%;
@@ -90,11 +90,12 @@ header{
             max-height:196px;
             overflow:auto;
             li{
-                line-height:24px;
-                @include flex-between;
+                line-height:28px;
+                @include flex-row(center, between);
                 a{
                     font-size:14px;
                     transition:0.3s ease-in-out;
+                    color:$color-pri;
                     &:hover{
                         color:$color-act;
                     }
@@ -114,7 +115,7 @@ header{
     }
     
     .gnbmenu{
-        @include flex-left;
+        @include flex-row(center, start);
         flex:1;
         gap:3%;
         margin-left:3%;
@@ -161,7 +162,7 @@ header{
 
 // layout
 .container{
-    @include flex-stretch;
+    @include flex-row(stretch, center);
 }
 
 // lnb
@@ -182,7 +183,7 @@ header{
         box-sizing: border-box;
         border-bottom: 1px solid #e7ebef4d;
         height:73px;
-        @include flex-center;
+        @include flex-row;
         h1{
             color:#fff;
             font-size:18px;

@@ -4,122 +4,62 @@ const col_count = 12;
 
 const data = [];
 const columns = [
-    {
-        header: '주문일/결제일',
-        name: 'date',
-        minWidth: 140,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '주문일/결제일', name: 'date', minWidth: 140, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '주문번호/주문경로',
-        name: 'ordernumber',
-        minWidth: 130,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '주문번호/주문경로', name: 'ordernumber', minWidth: 130, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '주문자 정보',
-        name: 'meminfo',
-        minWidth: 120,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '주문자 정보', name: 'meminfo', minWidth: 120, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '상품정보',
-        name: 'pdtinfo',
-        minWidth: 218,
-        whiteSpace: 'normal',
-        align: "left",
+    {header: '상품정보', name: 'pdtinfo', minWidth: 218, whiteSpace: 'normal', align: "left",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '총 상품금액',
-        name: 'price',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '총 상품금액', name: 'price', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '배송비',
-        name: 'shipment',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '배송비', name: 'shipment', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '할인금액',
-        name: 'discount',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '할인금액', name: 'discount', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '적립금 사용',
-        name: 'point',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '적립금 사용', name: 'point', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '총 할인금액',
-        name: 'totaldiscount',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '총 할인금액', name: 'totaldiscount', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '실 결제금액',
-        name: 'payment',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '실 결제금액', name: 'payment', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '결제수단',
-        name: 'method',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '결제수단', name: 'method', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
     },
-    {
-        header: '주문구분',
-        name: 'type',
-        minWidth: 100,
-        whiteSpace: 'normal',
-        align: "center",
+    {header: '주문구분', name: 'type', minWidth: 100, whiteSpace: 'normal', align: "center",
         formatter: function(e) {
             return e.value
         },
@@ -197,7 +137,7 @@ grid.on('mouseover', (e) => { // 상품정보에 마우스 오버시
             tooltip.innerHTML = '<div class="tip_img"><img src="../imgs/test' + key + '.jpg"></div>';
         }
         tooltip.innerHTML += '<div class="tip_detail"><span class="prdtit">컵밥_전주식돌솥비빔밥</span><span class="price">3,000원</span><span class="state">미입금</span></div>';
-        document.querySelector('.tbl_wrap').append(tooltip);
+        document.querySelector('.grid_wrap').append(tooltip);
 
         // 마우스 위치 따라 tooltip 이동
         document.addEventListener('mousemove', function(e){
@@ -214,6 +154,16 @@ grid.on('mouseout', (e) => { // 상품정보에서 마우스가 벗어났을 때
         tooltip.parentNode.removeChild(tooltip);
     }
 });
+
+grid.on('click', (e) => {
+    if (e.columnName == 'pdtinfo') {
+        window.open('popup_detail.html', '주문상세', 'width=1200, height=800, top=10, left=10');
+    }
+});
+
+function closePopup() {
+    window.open('', '_self').close();
+}
 
 // 엑셀 다운로드
 const options = {

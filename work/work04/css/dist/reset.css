@@ -60,4 +60,15 @@ input, select, textarea, button{
 
 button{
   cursor:pointer;
+  font-size:inherit;
 }
+
+textarea{
+  width:100%;
+  border:1px solid #e8e8e8;
+}
+
+/* [type="radio"]:focus-visible{
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted tomato;
+} */

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문상세</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+    <link rel="stylesheet" href="css/dist/reset.css" />
+    <link rel="stylesheet" href="css/dist/popup.css" />
+
+</head>
+<body>
+	<main class="popup_content">
+		<h1 class="tit_h1">주문상세</h1>
+		<div class="order_wrap">
+			<section class="order_detail">
+				<div class="order_summary">
+					<div class="number"><span>2023123435235214</span>홍길동(hong1@naver.com)<a href="#none;" class="btn_sec">CRM</a></div>
+					<div class="state">구매확정</div>
+				</div>
+				<div class="order_payment">
+					<div class="date">
+						<p>주문일 : 2023-02-01 14:39:59</p>
+						<p>결제일 : 2023-02-01 14:39:59</p>
+						<ul>
+							<li>주문금액 <span>8,980 </span>원</li>
+							<li>결제금액 <span>8,980 </span>원</li>
+							<li>환불완료금액 <span>8,980 </span>원</li>
+						</ul>
+					</div>
+					<dl class="path">
+						<dt>주문경로</dt>
+						<dd class="path_pc">PC</dd>
+						<!-- <dd class="path_mb">Mobile</dd> -->
+					</dl>
+					<dl class="payment">
+						<dt>결제수단</dt>
+						<dd class="card">신용카드</dd>
+						<!-- <dd class="transfer">신용카드</dd> -->
+					</dl>
+				</div>
+			</section>
+
+			<section class="tab">
+				<ul id="tabs">
+					<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="tab_panel_01" tabindex="0">주문정보</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_02" tabindex="0">원 주문정보</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_03" tabindex="0">취소(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_04" tabindex="0">교환(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_05" tabindex="0">반품(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_06" tabindex="0">환불(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_07" tabindex="0">관리자메모(<span>0</span>건)</button></li>
+					<li class="tab_item"><button><i class="ri-edit-line"></i>메모등록</button></li>
+				</ul>
+			</section>
+			<div class="tabcont_wrap">
+				<section class="tab_cont active" role="tabpanel" id="tab_panel_01" hidden="true" tabindex="0">
+					<h2 class="tit_h2">주문상품정보</h2>
+					<section class="grid_wrap">
+						<div id="grid" class="grid"></div>
+					</section>
+
+					<h2 class="tit_h2">추가 / 할인혜택정보</h2>
+					<section class="grid_wrap">
+						<div id="grid02" class="grid"></div>
+					</section>
+					<section class="tbl_wrap">
+						<h2 class="tit_h2">결제정보</h2>
+						<div class="info_box">
+							<dl>
+								<dt>상품 판매금액</dt>
+								<dd>5,980 원</dd>
+							</dl>
+							<span class="plus">+</span>
+							<dl>
+								<dt>총 배송비</dt>
+								<dd>3,000 원</dd>
+							</dl>
+							<span class="minus">-</span>
+							<dl>
+								<dt>총 할인액</dt>
+								<dd>0 원</dd>
+							</dl>
+							<div class="total">
+								실 결제금액<span class="price">8,980 원</span><span class="point">총 적립예정금액 500 원</span>
+								<span class="equal">=</span>
+							</div>
+						</div>
+					</section>
+					<section class="tbl_wrap">
+						<h2 class="tit_h2">결제수단</h2>
+						<table class="tbl">
+							<caption></caption>
+							<colgroup>
+								<col width="120px">
+								<col width="">
+								<col width="120px">
+								<col width="">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>결제방법</th>
+									<td colspan="3">신용카드(비씨)</td>
+								</tr>
+								<tr>
+									<th>주문일</th>
+									<td>신용카드(비씨)</td>
+									<th>결제일</th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<div class="tbl_order_info">
+						<section class="tbl_wrap">
+							<h2 class="tit_h2">주문자 정보</h2>
+							<table class="tbl">
+								<caption></caption>
+								<colgroup>
+									<col width="120px">
+									<col width="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3"></td>
+									</tr>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3"></td>
+									</tr>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3"></td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section class="tbl_wrap">
+							<h2 class="tit_h2">배송지 정보</h2>
+							<table class="tbl">
+								<caption></caption>
+								<colgroup>
+									<col width="120px">
+									<col width="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3"></td>
+									</tr>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3"></td>
+									</tr>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3"></td>
+									</tr>
+									<tr>
+										<th>주문상태</th>
+										<td colspan="3"></td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+					</div>
+				</section>
+				<section class="tab_cont" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="-1">
+					원 주문정보
+				</section>
+				<section class="tab_cont" role="tabpanel" id="tab_panel_03" hidden="true" tabindex="-1">
+					취소
+				</section>
+				<section class="tab_cont" role="tabpanel" id="tab_panel_04" hidden="true" tabindex="-1">
+					교환
+				</section>
+				<section class="tab_cont" role="tabpanel" id="tab_panel_05" hidden="true" tabindex="-1">
+					반품
+				</section>
+				<section class="tab_cont" role="tabpanel" id="tab_panel_06" hidden="true" tabindex="-1">
+					환불
+				</section>
+				<section class="tab_cont" role="tabpanel" id="tab_panel_07" hidden="true" tabindex="-1">
+					관리자메모
+				</section>
+				<section class="tab_cont" role="tabpanel" id="tab_panel_08" hidden="true" tabindex="-1">
+					메모등록
+				</section>
+			</div>
+			<div class="btn_wrap">
+				<button type="button" class="btn_sec" id="btnClose">닫기</button>
+			</div>
+		</div>
+		
+	</main>
+
+	<script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>	
+    <script>
+
+		// tab
+		const tabs = document.querySelectorAll('#tabs li');
+		const tabCont = document.querySelectorAll('.tabcont_wrap .tab_cont');
+
+		for(let i = 0; i < tabs.length; i++) {
+			tabs[i].addEventListener('click', function(e){
+				//const tabItem = document.querySelectorAll('button');
+				//let tabItem = tabs[i].getElementsByTagName('button');
+				// let tabItem = tabs[i].getElementsByTagName('button');
+				// console.log(tabItem);
+				// tabItem.setAttribute('aria-selected', true);
+				//tabItem[i].setAttribute('aria-selected', true);
+				//e.target.setAttribute('aria-selected', true);
+				//e.preventDefault();
+				for(let j = 0; j < tabs.length; j++){
+					tabs[j].classList.remove('active');
+					tabCont[j].classList.remove('active');
+				}
+				tabs[i].classList.add('active');
+				tabCont[i].classList.add('active')
+				tabCont[i].setAttribute('hidden', '');
+				tabCont[i].setAttribute('tabindex', '0');
+			});
+		}
+
+		//grid
+		const row_count = 2;
+		const col_count = 10;
+
+		const data = [];
+		const columns = [
+			{header: '상품정보', name: 'info', minWidth: 200, whiteSpace: 'normal', align: "center"},
+			{header: '상품금액', name: 'price', minWidth: 80, whiteSpace: 'normal', align: "center"},
+			{header: '주문수량', name: 'count', minWidth: 80, whiteSpace: 'normal',	align: "center"},
+			{header: '취소', name: 'cancle', minWidth: 50, whiteSpace: 'normal', align: "center"},
+			{header: '교환', name: 'a', minWidth: 50, whiteSpace: 'normal', align: "center"},
+			{header: '반품', name: 'b', minWidth: 50, whiteSpace: 'normal', align: "center"},
+			{header: '환불', name: 'refund', minWidth: 50, whiteSpace: 'normal', align: "center"},
+			{header: '운송장정보', name: 'shipment', minWidth: 100, whiteSpace: 'normal', align: "center"},
+			{header: '주문상태', name: 'state', minWidth: 100, whiteSpace: 'normal', align: "center"},
+		];
+
+		for (let i = 0; i < row_count; i++) {
+			const row = {
+				'info': '2023-01-03 15:54:23',
+				'price': '5,980원',
+				'count': '1',
+				'cancle': '0',
+				'a': '0',
+				'b': '0',
+				'refund': '0',
+				'shipment': '롯데택배',
+				'state': '<button>구매확정</button>',
+			};
+			for (let j = 0; j < col_count; j++) {
+				row[`${j}`] = row;
+			}
+			data.push(row);
+		}
+
+		function grid() {
+			let gridId = '02';
+			let gridTbl = document.getElementById('grid');
+			const grid = new tui.Grid({
+				el: gridTbl,
+				data: data,
+				scrollX: false,
+				scrollY: false,
+				bodyHeight: 120,
+				rowHeight:40, // td 높이
+				header: {
+					height:40 // th 높이
+				},
+				draggable: false,
+				contextMenu: null,
+				columns: columns,
+			});
+		}
+		grid();
+		
+	</script>
+</body>
+</html>

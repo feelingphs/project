@@ -5,6 +5,8 @@ $color-act: #26c6da;
 
 $color-wh: #fff;
 $color-bk:#222;
+$color-red:#e73841;
+$color-gray:#e8e8e8;
 
 $color-pri: #34444c;
 $color-sec: #3f4754;
@@ -32,26 +34,26 @@ $url: '../../imgs/';
     src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
     src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
    }
-   
-   @font-face {
+
+@font-face {
     font-family: 'NanumBarunGothic';
     font-style: normal;
     font-weight: 700;
     src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
     src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
-   }
-   
-   @font-face {
+}
+
+@font-face {
     font-family: 'NanumBarunGothic';
     font-style: normal;
     font-weight: 300;
     src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
     src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
-   }
-   
-   .nanumbarungothic * {
+}
+
+.nanumbarungothic * {
     font-family: 'NanumBarunGothic', sans-serif;
-   }
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
@@ -87,6 +89,34 @@ input{
     }
 }
 
+
+section{
+    & + section{
+        margin-top:40px;
+    }
+    & + div{
+        margin-top:40px;
+    }
+}
+
+div{
+    & > section{
+        & + section{
+            margin-top:0;
+        }
+    }
+}
+
+/* title */
+.tit_h1{
+    font-size:24px;
+    line-height:1;
+}
+.tit_h2{}
+.tit_h3{}
+.tit_h4{}
+.tit_h5{}
+
 /* table */
 table{
     width:100%;
@@ -103,19 +133,43 @@ table{
     }
 }
 
+.tbl_wrap{
+    .tit_h2{
+        margin-bottom:16px;
+    }
+    .tbl{
+        th{
+            background:#f8f8f8;
+            padding:0 16px;
+            border:1px solid #e8e8e8;
+        }
+        td{
+            padding:8px;
+            border:1px solid #e8e8e8;
+        }
+    }
+}
+
+
 /* selectbox */
 .dropdown_wrap{
     display:flex;
     gap:8px;
     .dropdown{
-        width:100px;
         display:flex;
         position:relative;
+        &.sm{
+            width:100px;
+        }
+        &.lg{
+            width:160px;
+        }
     }
     .select{
         width:100%;
         height:32px;
         border:1px solid #ddd;
+        background:$color-wh;
         text-align:left;
         padding:0 8px;
         box-sizing:border-box;
@@ -127,33 +181,27 @@ table{
         display:none;
         width:100%;
         position:absolute;
-        top:0;
+        top:31px;
         left:0;
         z-index:9;
         border:1px solid #e8e8e8;
         background-color:#fff;
-        
+        border-top:0;
         li{
             width: 100%;
             height: 32px;
-            @include flex-left;
             padding: 8px;
             box-sizing: border-box;
             cursor:pointer;
             &:hover{
                 background:#f8f8f8;
             }
-            &:first-child{
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z' fill='rgba(52,68,76,1)'/%3E%3C/svg%3E");
-                background-repeat:no-repeat;
-                background-position:96% 6px;
-            }
         }
     }
 }
 
 
-/* input[type=checkbox] */
+/* input[type="checkbox"] */
 .chkbox_area{
     position:relative;
 }
@@ -202,7 +250,7 @@ table{
     }
 }
 
-/* input[type=text] */
+/* input[type="text"] */
 .input_area{
     width:160px;
     .text_inp{
@@ -265,7 +313,8 @@ table{
 
 /* button */
 .btn_wrap{
-    @include flex-right;
+    @include flex-row;
+    gap:8px;
     margin-top:40px;
 }
 .btn{
@@ -290,15 +339,8 @@ table{
 }
 
 /* flex */
-.flex_center{
-    @include flex-center;
-    gap:8px;
-}
-
 .flex_right{
-    @include flex-right;
-}
-
-.flex_left{
-    @include flex-left;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
 }

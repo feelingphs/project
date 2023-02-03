@@ -26,7 +26,7 @@
         }
     }
     dl{
-        @include flex-between;
+        @include flex-row(center, between);
         font-size:16px;
         dd{
             span{
@@ -59,10 +59,10 @@
     .vertical{
         width:100%;
         .group_per{
-            @include flex-between;
+            @include flex-row(center, between);
         }
         dl{
-            @include flex-between;
+            @include flex-row(center, between);
             flex:1;
             padding:0 24px;
             position:relative;
@@ -120,6 +120,7 @@
     width:54%;
     margin:0 auto;
     padding:40px 0;
+    @include flex-row;
     .tit_h2{
         width:160px;
         font-weight:700;
@@ -129,6 +130,7 @@
 .search_area{
     $h:48px;
     width:100%;
+    @include flex-row(center, between);
     gap:8px;
     flex:1;
     .dropdown_wrap{
@@ -202,32 +204,13 @@
     display:none;
     .none_box{
         width:100%;
-        //background:#f8f8f8;
         margin-top:28px;
-        //padding:40px;
-        //box-sizing:border-box;
     }
     &.open{
         height:100%;
         opacity:1;
         margin-top:40px;
         display:block;
-    }
-    .tit_h2{
-        font-weight:700;
-    }
-    .tbl{
-        border:1px solid #e8e8e8;
-        tr{
-            border-bottom:1px solid #e8e8e8;
-        }
-        th{
-            background:#f8f8f8;
-            padding:0 16px;
-        }
-        td{
-            padding:8px;
-        }
     }
 }
 
@@ -241,8 +224,11 @@
 }
 
 .period_wrap{
-    @include flex-left;
+    @include flex-row(center, left);
     gap:8px;
+    & + .period_wrap{
+        margin-top:8px;
+    }
     .period_btnwrap{
         font-size:0;
         button{
@@ -251,6 +237,7 @@
             width:48px;
             height:32px;
             margin-left:-1px;
+            background:$color-wh;
             &.active{
                 background:$color-act;
                 color:$color-wh;
@@ -266,16 +253,28 @@
         height: 24px;
         font-size: 16px;
         line-height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
+        background-position:center center;
+    }
+    .btn_del{
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+        line-height: 24px;
+        background-color:#e7ebef;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M5 11h14v2H5z' fill='rgba(52,68,76,1)'/%3E%3C/svg%3E");
+        background-position:center center;
     }
 }
 
 .radio_wrap{
-    @include flex-left;
+    @include flex-row(center, left);
     gap:24px;
 }
 
 // 데이터 테이블
-.tbl_wrap{
+.grid_wrap{
     margin-top:64px;
     padding:40px;
     background:#fff;
@@ -283,6 +282,7 @@
     border:1px solid #ddd;
     .btn_wrap{
         margin-top:0;
+        justify-content:flex-end;
     }
     .grid{
         width:100%;
@@ -335,14 +335,14 @@
 
 .tooltip{
     position:absolute;
-    z-index:10;
+    z-index:9999;
     pointer-events:none;
     opacity:1;
     padding:8px;
     background:#f8f8f8;
     border-radius:8px;
     width:160px;
-    @include flex-left;
+    @include flex-row(center, left);
     gap:8px;
     .tip_img{
         img{

@@ -44,8 +44,8 @@
 				</div>
 			</section>
 
-			<section class="tab">
-				<ul id="tabs">
+			<section class="tab" data-role="tab">
+				<ul class="tabs" role="tablist">
 					<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="tab_panel_01" tabindex="0">주문정보</button></li>
 					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_02" tabindex="0">원 주문정보</button></li>
 					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_03" tabindex="0">취소(<span>0</span>건)</button></li>
@@ -55,142 +55,210 @@
 					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_07" tabindex="0">관리자메모(<span>0</span>건)</button></li>
 					<li class="tab_item"><button><i class="ri-edit-line"></i>메모등록</button></li>
 				</ul>
-			</section>
-			<div class="tabcont_wrap">
-				<section class="tab_cont active" role="tabpanel" id="tab_panel_01" hidden="true" tabindex="0">
-					<h2 class="tit_h2">주문상품정보</h2>
-					<section class="grid_wrap">
-						<div id="grid" class="grid"></div>
-					</section>
+			
+				<div class="tabcont_wrap">
+					<section class="tab_cont active" role="tabpanel" id="tab_panel_01" hidden="true" tabindex="0">
+						<h2 class="tit_h2">주문상품정보</h2>
+						<section class="grid_wrap">
+							<div id="grid" class="grid"></div>
+						</section>
 
-					<h2 class="tit_h2">추가 / 할인혜택정보</h2>
-					<section class="grid_wrap">
-						<div id="grid02" class="grid"></div>
-					</section>
-					<section class="tbl_wrap">
-						<h2 class="tit_h2">결제정보</h2>
-						<div class="info_box">
-							<dl>
-								<dt>상품 판매금액</dt>
-								<dd>5,980 원</dd>
-							</dl>
-							<span class="plus">+</span>
-							<dl>
-								<dt>총 배송비</dt>
-								<dd>3,000 원</dd>
-							</dl>
-							<span class="minus">-</span>
-							<dl>
-								<dt>총 할인액</dt>
-								<dd>0 원</dd>
-							</dl>
-							<div class="total">
-								실 결제금액<span class="price">8,980 원</span><span class="point">총 적립예정금액 500 원</span>
-								<span class="equal">=</span>
+						<section class="tab" data-role="tab">
+							<ul class="tabs" role="tablist">
+								<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="tab_panel_01" tabindex="0">주문정보</button></li>
+								<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_02" tabindex="0">원 주문정보</button></li>
+								<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_03" tabindex="0">취소(<span>0</span>건)</button></li>
+								<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_04" tabindex="0">교환(<span>0</span>건)</button></li>
+								<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_05" tabindex="0">반품(<span>0</span>건)</button></li>
+								<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_06" tabindex="0">환불(<span>0</span>건)</button></li>
+								<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_07" tabindex="0">관리자메모(<span>0</span>건)</button></li>
+								<li class="tab_item"><button><i class="ri-edit-line"></i>메모등록</button></li>
+							</ul>
+						
+							<div class="tabcont_wrap">
+								<section class="tab_cont active" role="tabpanel" id="tab_panel_01" hidden="true" tabindex="0">
+
+									dsf
+								</section>
 							</div>
+						</section>
+
+						<h2 class="tit_h2">추가 / 할인혜택정보</h2>
+						<section class="grid_wrap">
+							<div id="grid02" class="grid"></div>
+						</section>
+						<section class="tbl_wrap">
+							<h2 class="tit_h2">결제정보</h2>
+							<div class="info_box">
+								<dl>
+									<dt>상품 판매금액</dt>
+									<dd>5,980 원</dd>
+								</dl>
+								<span class="plus">+</span>
+								<dl>
+									<dt>총 배송비</dt>
+									<dd>3,000 원</dd>
+								</dl>
+								<span class="minus">-</span>
+								<dl>
+									<dt>총 할인액</dt>
+									<dd>0 원</dd>
+								</dl>
+								<div class="total">
+									실 결제금액<span class="price">8,980 원</span><span class="point">총 적립예정금액 500 원</span>
+									<span class="equal">=</span>
+								</div>
+							</div>
+						</section>
+						<section class="tbl_wrap">
+							<h2 class="tit_h2">결제수단</h2>
+							<table class="tbl">
+								<caption></caption>
+								<colgroup>
+									<col width="120px">
+									<col width="">
+									<col width="120px">
+									<col width="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>결제방법</th>
+										<td colspan="3">신용카드(비씨)</td>
+									</tr>
+									<tr>
+										<th>주문일</th>
+										<td>신용카드(비씨)</td>
+										<th>결제일</th>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<div class="tbl_order_info">
+							<section class="tbl_wrap">
+								<h2 class="tit_h2">주문자 정보</h2>
+								<table class="tbl">
+									<caption></caption>
+									<colgroup>
+										<col width="120px">
+										<col width="">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>주문상태</th>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<th>주문상태</th>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<th>주문상태</th>
+											<td colspan="3"></td>
+										</tr>
+									</tbody>
+								</table>
+							</section>
+							<section class="tbl_wrap">
+								<h2 class="tit_h2">배송지 정보</h2>
+								<table class="tbl">
+									<caption></caption>
+									<colgroup>
+										<col width="120px">
+										<col width="">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>주문상태</th>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<th>주문상태</th>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<th>주문상태</th>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<th>주문상태</th>
+											<td colspan="3"></td>
+										</tr>
+									</tbody>
+								</table>
+							</section>
 						</div>
 					</section>
-					<section class="tbl_wrap">
-						<h2 class="tit_h2">결제수단</h2>
-						<table class="tbl">
-							<caption></caption>
-							<colgroup>
-								<col width="120px">
-								<col width="">
-								<col width="120px">
-								<col width="">
-							</colgroup>
-							<tbody>
-								<tr>
-									<th>결제방법</th>
-									<td colspan="3">신용카드(비씨)</td>
-								</tr>
-								<tr>
-									<th>주문일</th>
-									<td>신용카드(비씨)</td>
-									<th>결제일</th>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="-1">
+						원 주문정보
 					</section>
-					<div class="tbl_order_info">
-						<section class="tbl_wrap">
-							<h2 class="tit_h2">주문자 정보</h2>
-							<table class="tbl">
-								<caption></caption>
-								<colgroup>
-									<col width="120px">
-									<col width="">
-								</colgroup>
-								<tbody>
-									<tr>
-										<th>주문상태</th>
-										<td colspan="3"></td>
-									</tr>
-									<tr>
-										<th>주문상태</th>
-										<td colspan="3"></td>
-									</tr>
-									<tr>
-										<th>주문상태</th>
-										<td colspan="3"></td>
-									</tr>
-								</tbody>
-							</table>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_03" hidden="true" tabindex="-1">
+						취소
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_04" hidden="true" tabindex="-1">
+						교환
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_05" hidden="true" tabindex="-1">
+						반품
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_06" hidden="true" tabindex="-1">
+						환불
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_07" hidden="true" tabindex="-1">
+						관리자메모
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_08" hidden="true" tabindex="-1">
+						메모등록
+					</section>
+				</div>
+			</section>
+
+
+
+
+
+			<section class="tab" data-role="tab">
+				<ul class="tabs" role="tablist">
+					<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="tab_panel_11" tabindex="0">주문정보</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_12" tabindex="0">원 주문정보</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_13" tabindex="0">취소(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_14" tabindex="0">교환(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_15" tabindex="0">반품(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_16" tabindex="0">환불(<span>0</span>건)</button></li>
+					<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_17" tabindex="0">관리자메모(<span>0</span>건)</button></li>
+					<li class="tab_item"><button><i class="ri-edit-line"></i>메모등록</button></li>
+				</ul>
+				<div class="tabcont_wrap">
+					<section class="tab_cont active" role="tabpanel" id="tab_panel_11" hidden="true" tabindex="0">
+						<h2 class="tit_h2">주문상품정보</h2>
+						<section class="grid_wrap">
+							주문상품정보
 						</section>
-						<section class="tbl_wrap">
-							<h2 class="tit_h2">배송지 정보</h2>
-							<table class="tbl">
-								<caption></caption>
-								<colgroup>
-									<col width="120px">
-									<col width="">
-								</colgroup>
-								<tbody>
-									<tr>
-										<th>주문상태</th>
-										<td colspan="3"></td>
-									</tr>
-									<tr>
-										<th>주문상태</th>
-										<td colspan="3"></td>
-									</tr>
-									<tr>
-										<th>주문상태</th>
-										<td colspan="3"></td>
-									</tr>
-									<tr>
-										<th>주문상태</th>
-										<td colspan="3"></td>
-									</tr>
-								</tbody>
-							</table>
-						</section>
-					</div>
-				</section>
-				<section class="tab_cont" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="-1">
-					원 주문정보
-				</section>
-				<section class="tab_cont" role="tabpanel" id="tab_panel_03" hidden="true" tabindex="-1">
-					취소
-				</section>
-				<section class="tab_cont" role="tabpanel" id="tab_panel_04" hidden="true" tabindex="-1">
-					교환
-				</section>
-				<section class="tab_cont" role="tabpanel" id="tab_panel_05" hidden="true" tabindex="-1">
-					반품
-				</section>
-				<section class="tab_cont" role="tabpanel" id="tab_panel_06" hidden="true" tabindex="-1">
-					환불
-				</section>
-				<section class="tab_cont" role="tabpanel" id="tab_panel_07" hidden="true" tabindex="-1">
-					관리자메모
-				</section>
-				<section class="tab_cont" role="tabpanel" id="tab_panel_08" hidden="true" tabindex="-1">
-					메모등록
-				</section>
-			</div>
+
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_12" hidden="true" tabindex="-1">
+						원 주문정보
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_13" hidden="true" tabindex="-1">
+						취소
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_14" hidden="true" tabindex="-1">
+						교환
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_15" hidden="true" tabindex="-1">
+						반품
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_16" hidden="true" tabindex="-1">
+						환불
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_17" hidden="true" tabindex="-1">
+						관리자메모
+					</section>
+					<section class="tab_cont" role="tabpanel" id="tab_panel_18" hidden="true" tabindex="-1">
+						메모등록
+					</section>
+				</div>
+			</section>
 			<div class="btn_wrap">
 				<button type="button" class="btn_sec" id="btnClose">닫기</button>
 			</div>
@@ -202,29 +270,81 @@
     <script>
 
 		// tab
-		const tabs = document.querySelectorAll('#tabs li');
-		const tabCont = document.querySelectorAll('.tabcont_wrap .tab_cont');
+		const tabGroups = document.querySelectorAll('[data-role="tab"]');
+		const tabPanelWrap = document.querySelectorAll('.tabcont_wrap');
 
-		for(let i = 0; i < tabs.length; i++) {
-			tabs[i].addEventListener('click', function(e){
-				//const tabItem = document.querySelectorAll('button');
-				//let tabItem = tabs[i].getElementsByTagName('button');
-				// let tabItem = tabs[i].getElementsByTagName('button');
-				// console.log(tabItem);
-				// tabItem.setAttribute('aria-selected', true);
-				//tabItem[i].setAttribute('aria-selected', true);
-				//e.target.setAttribute('aria-selected', true);
-				//e.preventDefault();
-				for(let j = 0; j < tabs.length; j++){
-					tabs[j].classList.remove('active');
-					tabCont[j].classList.remove('active');
-				}
-				tabs[i].classList.add('active');
-				tabCont[i].classList.add('active')
-				tabCont[i].setAttribute('hidden', '');
-				tabCont[i].setAttribute('tabindex', '0');
+		for(let i = 0; i < tabGroups.length; i++){
+			const tab = tabGroups[i].querySelectorAll('li');
+			const tabPanel = tabPanelWrap[i].querySelectorAll('[role="tabpanel"]');
+
+			tab.forEach(function(tab, idx) {
+				tab.addEventListener('click', function(e){
+					e.stopPropagation();
+					let currentTarget = e.currentTarget;
+					console.log(currentTarget);
+					console.log(idx);
+					
+					tab.classList.remove('active');
+
+					// currentTarget.classList.add('active');
+
+					// if(currentTarget.classList.contains('active')){
+					// 	console.log(true);
+
+					// 	tabPanel[idx].classList.add('active');
+					// }
+				});
 			});
 		}
+		
+
+
+
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// const tabs = document.querySelectorAll('.tabs li');
+		// const tabCont = document.querySelectorAll('.tabcont_wrap .tab_cont');
+
+		// for(let i = 0; i < tabs.length; i++) {
+		// 	tabs[i].addEventListener('click', function(e){
+		// 		//const tabItem = document.querySelectorAll('button');
+		// 		//let tabItem = tabs[i].getElementsByTagName('button');
+		// 		// let tabItem = tabs[i].getElementsByTagName('button');
+		// 		// console.log(tabItem);
+		// 		// tabItem.setAttribute('aria-selected', true);
+		// 		//tabItem[i].setAttribute('aria-selected', true);
+		// 		//e.target.setAttribute('aria-selected', true);
+		// 		e.preventDefault();
+		// 		for(let j = 0; j < tabs.length; j++){
+		// 			tabs[j].classList.remove('active');
+		// 			tabCont[j].classList.remove('active');
+		// 		}
+		// 		tabs[i].classList.add('active');
+		// 		tabCont[i].classList.add('active')
+		// 		tabCont[i].setAttribute('hidden', '');
+		// 		tabCont[i].setAttribute('tabindex', '0');
+		// 	});
+		// }
 
 		//grid
 		const row_count = 2;

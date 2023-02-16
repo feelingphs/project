@@ -196,3 +196,23 @@ document.addEventListener('click', function(e){
         e.target.parentNode.remove();
     }
 });
+
+// 기간 버튼 활성화
+const periodGroup = document.querySelectorAll('.period_btnwrap');
+
+for(let i = 0; i < periodGroup.length; i++){
+	const periodBtn = periodGroup[i].querySelectorAll('button');
+
+	periodBtn.forEach(function(periodBtn){
+		periodBtn.addEventListener('click', function(e){
+			actRemove();
+			e.target.classList.add('active');
+		});
+	});
+	
+	function actRemove () {
+		for(let j = 0; j < periodBtn.length; j++){
+			periodBtn[j].classList.remove('active');		
+		}
+	}
+}

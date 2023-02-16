@@ -338,6 +338,7 @@ body {
   font-family: "Roboto", "NanumBarunGothic", sans-serif;
   font-size: 13px;
   font-weight: 400;
+  line-height: 18px;
 }
 
 header {
@@ -927,6 +928,7 @@ header .utilmenu .user {
 }
 .chkbox_wrap .chkbox_area {
   flex-basis: 108px;
+  line-height: 16px;
 }
 
 .period_wrap {
@@ -939,7 +941,7 @@ header .utilmenu .user {
   margin-top: 8px;
 }
 .period_wrap .period_btnwrap {
-  font-size: 0;
+  display: flex;
 }
 .period_wrap .period_btnwrap button {
   padding: 0 4px;

@@ -226,3 +226,31 @@ for(let i = 0; i < periodGroup.length; i++){
 		}
 	}
 }
+
+// tab
+const tabGroups = document.querySelectorAll('[data-role="tab"]');
+const tabPanelWrap = document.querySelectorAll('.tabcont_wrap');
+
+for(let i = 0; i < tabGroups.length; i++){
+    const tab = tabGroups[i].querySelectorAll('li');
+    const tabPanel = tabPanelWrap[i].querySelectorAll('[role="tabpanel"]');
+
+    tab.forEach(function(tab, idx) {
+        tab.addEventListener('click', function(e){
+            e.stopPropagation();
+            let currentTarget = e.currentTarget;
+            console.log(currentTarget);
+            console.log(idx);
+            
+            tab.classList.remove('active');
+
+            // currentTarget.classList.add('active');
+
+            // if(currentTarget.classList.contains('active')){
+            // 	console.log(true);
+
+            // 	tabPanel[idx].classList.add('active');
+            // }
+        });
+    });
+}

@@ -520,10 +520,10 @@
 					</div>
 					<button type="button" id="btnOpen" class="btn_open" aria-label="상세검색 영역 펼치기/닫기"><i class="ri-arrow-down-s-line"></i></button>
 				</section>
-				<section class="grid_wrap">
-					<ul class="tab_wrap">
-						<li class="active"><button>주문별</button></li>
-						<li><button>상품별</button></li>
+				<section class="tab grid_wrap" data-role="tab">
+					<ul class="tabs" role="tablist">
+						<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="tab_panel_01" tabindex="0">주문정보</button></li>
+						<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_02" tabindex="0">원 주문정보</button></li>
 					</ul>
 					<div class="btn_wrap mb16">
 						<button type="button" id="gridExport" class="btn_icon btn_export" title="엑셀 다운로드 버튼" aria-label="엑셀 다운로드 버튼">
@@ -532,11 +532,32 @@
 							</svg>
 						</button>
 					</div>
-					<div class="tab_cont">
-						<div id="gridOrd" class="grid"></div>
-						<div id="gridPrd" class="grid"></div>
+					<div class="tabcont_wrap">
+						<section class="tab_cont active" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="0">
+							<div id="gridOrd" class="grid"></div>
+						</section>
+						<section class="tab_cont" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="-1">
+							<div id="gridPrd" class="grid"></div>
+						</section>
 					</div>
 				</section>
+				<!-- <section class="grid_wrap tab"  data-role="tab">
+					<ul class="tabs" role="tablist">
+						<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="gridOrd" tabindex="0">주문별</button></li>
+						<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="gridPrd" tabindex="0">상품별</button></li>
+					</ul>
+					<div class="btn_wrap mb16">
+						<button type="button" id="gridExport" class="btn_icon btn_export" title="엑셀 다운로드 버튼" aria-label="엑셀 다운로드 버튼">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+								<path fill="none" d="M0 0h24v24H0z"/><path d="M2.859 2.877l12.57-1.795a.5.5 0 0 1 .571.495v20.846a.5.5 0 0 1-.57.495L2.858 21.123a1 1 0 0 1-.859-.99V3.867a1 1 0 0 1 .859-.99zM4 4.735v14.53l10 1.429V3.306L4 4.735zM17 19h3V5h-3V3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4v-2zm-6.8-7l2.8 4h-2.4L9 13.714 7.4 16H5l2.8-4L5 8h2.4L9 10.286 10.6 8H13l-2.8 4z" fill="rgba(255,255,255,1)"/>
+							</svg>
+						</button>
+					</div>
+					<div class="tabcont_wrap">
+						<div id="gridOrd" class="grid tab_cont active" role="tabpanel" hidden="true" tabindex="0"></div>
+						<div id="gridPrd" class="grid tab_cont" role="tabpanel" hidden="true" tabindex="-1"></div>
+					</div>
+				</section> -->
 			</div>
 		</main>
 	</div>

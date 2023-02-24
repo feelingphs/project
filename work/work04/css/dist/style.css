@@ -1049,22 +1049,52 @@ header .utilmenu .user {
   border: 1px solid #ddd;
 }
 
-.tab_wrap {
+.tab {
+  margin-top: 40px;
+}
+.tab ul {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
 }
-.tab_wrap li {
-  border: 1px solid #ddd;
-}
-.tab_wrap li.active {
-  background: #26c6da;
-  border: 1px solid #26c6da;
-}
-.tab_wrap li.active button {
-  color: #fff;
-}
-.tab_wrap li button {
+.tab ul li {
   width: 120px;
   height: 40px;
+  background: #7a8d97;
+  margin-bottom: -1px;
+  border-radius: 4px 4px 0 0;
+}
+.tab ul li button {
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.tab ul li.active {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
+}
+.tab ul li.active button {
+  color: #34444c;
+}
+
+.tabcont_wrap {
+  margin-top: 0;
+}
+.tabcont_wrap .tab_cont {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 24px;
+  display: none;
+}
+.tabcont_wrap .tab_cont.active {
+  display: block;
+}
+.tabcont_wrap .tab_cont .tit_h2 {
+  margin-bottom: 16px;
 }
 
 .tooltip {

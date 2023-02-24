@@ -291,6 +291,13 @@
         z-index:1;
         .tui-grid-container{
             font-family:$font-family;
+            .chkbox_area{
+                display:inline-block;
+                text-align:center;
+                label{
+                    padding-left:15px;
+                }
+            }
         }
         .tui-grid-cell{
             position:relative;
@@ -330,6 +337,24 @@
                 background:#ddd;
                 border:1px solid #ddd;
             }
+        }
+    }
+}
+
+.tab_wrap{
+    display:flex;
+    li{
+        border:1px solid #ddd;
+        &.active{
+            background:$color-act;
+            border:1px solid $color-act;
+            button{
+                color:$color-wh;
+            }
+        }
+        button{
+            width: 120px;
+            height:40px;
         }
     }
 }

@@ -1,3 +1,5 @@
+'use strict';
+
 // 현재 스크롤 위치
 window.addEventListener('scroll', function(){
     let scrollX = this.scrollX;
@@ -7,8 +9,8 @@ window.addEventListener('scroll', function(){
 });
 
 // dimmed
+const dim = document.getElementById('dimmed');
 function dimmed () {
-    const dim = document.getElementById('dimmed');
     if (window.getComputedStyle(dim).display === "none") {
         dim.style.display = 'block';
     }else {
@@ -23,12 +25,20 @@ topBtn.addEventListener('click', function(){
 });
 
 // 즐겨찾기 토글
-const bookmarkBefore = document.getElementById('bookmark');
-const bmList = document.getElementById('favorite');
-bookmarkBefore.addEventListener('click', function(){
-    dimmed();
-    return slideToggle(bmList, 300);
+const bookMarkOpen = document.getElementById('bookmark');
+const bookMarkList = document.getElementById('favorite');
+bookMarkOpen.addEventListener('click', () => {
+    dim.style.display = 'block';
+    bookMarkList.style.display = 'block';
 });
+document.addEventListener('click', (e) => {
+    const clickInside = bookMarkList.contains(e.target) || bookMarkOpen.contains(e.target);
+    if(!clickInside){
+        dim.style.display = 'none';
+        bookMarkList.style.display = 'none';
+    }
+});
+
 
 // lnb 열기, 닫기
 const leftMenu = document.getElementById('lnb');
@@ -145,10 +155,10 @@ const slideToggle = (target, duration = 300) => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-    const btnOpen = document.querySelector("#btnOpen");
+    const btnOpen = document.getElementById("btnOpen");
     const detailSearch = document.querySelector("#detailSearch");
-    btnOpen.addEventListener("click", (event) => {
-        event.preventDefault();
+    btnOpen.addEventListener("click", (e) => {
+        e.preventDefault();
         slideToggle(detailSearch, 500);
     });
 });

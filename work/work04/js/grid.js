@@ -87,8 +87,56 @@ for (let i = 0; i < row_count; i++) {
     data.push(row);
 }
 
-const grid = new tui.Grid({
-    el: document.getElementById('grid'),
+// checkbox custom renderer
+class CheckboxRenderer {
+    constructor(props) {
+        const { grid, rowKey } = props;
+
+        const inputWrap = document.createElement('div');
+        inputWrap.className = 'chkbox_area';
+
+        const label = document.createElement('label');
+        label.setAttribute('for', String(rowKey));
+
+        const checkInput = document.createElement('input');
+        checkInput.className = 'chkbox_inp';
+        checkInput.id = String(rowKey);
+
+        inputWrap.appendChild(checkInput);
+        inputWrap.appendChild(label);
+
+        checkInput.type = 'checkbox';
+        label.addEventListener('click', (ev) => {
+            ev.preventDefault();
+
+            if (ev.shiftKey) {
+                gridOrd[!checkInput.checked ? 'checkBetween' : 'uncheckBetween'](rowKey);
+                return;
+            }
+
+            grid[!checkInput.checked ? 'check' : 'uncheck'](rowKey);
+        });
+
+        this.el = inputWrap;
+
+        this.render(props);
+    }
+  
+    getElement() {
+        return this.el;
+    }
+  
+    render(props) {
+        const checkInput = this.el.querySelector('.chkbox_inp');
+        const checked = Boolean(props.value);
+
+        checkInput.checked = checked;
+    }
+  }
+  
+// 주문별
+const gridOrd = new tui.Grid({
+    el: document.getElementById('gridOrd'),
     data: data,
     //scrollX: false,
     //scrollY: false,
@@ -106,11 +154,58 @@ const grid = new tui.Grid({
         {
             type: 'checkbox',
             header: `
-            <label for="all-checkbox" class="checkbox">
-                <input type="checkbox" id="all-checkbox" class="hidden-input" name="_checked" />
-                <span class="custom-input"></span>
-            </label>
+            <div class="chkbox_area">
+                <input type="checkbox" id="all-checkbox" class="chkbox_inp" name="_checked" />
+                <label for="all-checkbox" class="checkbox">
+                    <span class="custom-input"></span>
+                </label>
+            </div>
             `,
+            renderer: {
+                type: CheckboxRenderer
+            }
+        }
+    ],
+    columns: columns,
+    columnOptions: { 
+        resizable: true // 컬럼 너비 조절
+    },
+    pageOptions: { 
+        useClient: true,
+        perPage: 30 // 페이지당 노출 갯수
+    }
+});
+
+// 상품별
+const gridPrd = new tui.Grid({
+    el: document.getElementById('gridPrd'),
+    data: data,
+    //scrollX: false,
+    //scrollY: false,
+    bodyHeight: 497,
+    rowHeight:80, // td 높이
+    header: {
+        height:40 // th 높이
+    },
+    draggable: false,
+    contextMenu: null,
+    rowHeaders: [
+        {
+            type: 'rowNum'
+        },
+        {
+            type: 'checkbox',
+            header: `
+            <div class="chkbox_area">
+                <input type="checkbox" id="all-checkbox" class="chkbox_inp" name="_checked" />
+                <label for="all-checkbox" class="checkbox">
+                    <span class="custom-input"></span>
+                </label>
+            </div>
+            `,
+            renderer: {
+                type: CheckboxRenderer
+            }
         }
     ],
     columns: columns,
@@ -127,10 +222,9 @@ const grid = new tui.Grid({
 const tooltip = document.createElement('div');
 tooltip.classList.add('tooltip');
 
-grid.on('mouseover', (e) => { // 상품정보에 마우스 오버시
+gridOrd.on('mouseover', (e) => { // 상품정보에 마우스 오버시
     const key = e.rowKey + 1;
-    const columnName = e.columnName;
-    if (columnName == 'pdtinfo' && key !== NaN) {
+    if (e.columnName == 'pdtinfo' && !isNaN(key)) {
         if(key < 10){
             tooltip.innerHTML = '<div class="tip_img"><img src="../imgs/test0' + key + '.jpg"></div>';
         } else {
@@ -147,16 +241,16 @@ grid.on('mouseover', (e) => { // 상품정보에 마우스 오버시
     }
 });
 
-grid.on('mouseout', (e) => { // 상품정보에서 마우스가 벗어났을 때
-    const key = e.rowKey;
-    const columnName = e.columnName;
-    if (columnName == 'pdtinfo') {
+gridOrd.on('mouseout', (e) => { // 상품정보에서 마우스가 벗어났을 때
+    const key = e.rowKey + 1;
+    if (e.columnName == 'pdtinfo' && !isNaN(key)) {
         tooltip.parentNode.removeChild(tooltip);
     }
 });
 
-grid.on('click', (e) => {
-    if (e.columnName == 'pdtinfo') {
+gridOrd.on('click', (e) => { // 상품정보 클릭했을 때
+    const key = e.rowKey + 1;
+    if (e.columnName == 'pdtinfo' && !isNaN(key)) {
         window.open('popup_detail.html', '주문상세', 'width=1200, height=800, top=10, left=10');
     }
 });
@@ -175,5 +269,5 @@ const btnExport = document.querySelector('#gridExport');
 btnExport.addEventListener('click', function() {
     //grid.export('csv');
     //grid.export('xlsx');
-    grid.export('xlsx', options);
+    gridOrd.export('xlsx', options);
 });

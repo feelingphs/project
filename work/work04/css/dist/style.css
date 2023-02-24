@@ -335,10 +335,12 @@ table th {
 }
 
 body {
+  min-width: 1400px;
   font-family: "Roboto", "NanumBarunGothic", sans-serif;
   font-size: 13px;
-  font-weight: 400;
   line-height: 18px;
+  color: #263238;
+  font-weight: 400;
 }
 
 header {
@@ -1004,6 +1006,13 @@ header .utilmenu .user {
 .grid_wrap .grid .tui-grid-container {
   font-family: "Roboto", "NanumBarunGothic", sans-serif;
 }
+.grid_wrap .grid .tui-grid-container .chkbox_area {
+  display: inline-block;
+  text-align: center;
+}
+.grid_wrap .grid .tui-grid-container .chkbox_area label {
+  padding-left: 15px;
+}
 .grid_wrap .grid .tui-grid-cell {
   position: relative;
   background: #fff;
@@ -1038,6 +1047,24 @@ header .utilmenu .user {
 .grid_wrap .grid .tui-pagination .tui-is-selected, .grid_wrap .grid .tui-pagination .tui-pagination strong {
   background: #ddd;
   border: 1px solid #ddd;
+}
+
+.tab_wrap {
+  display: flex;
+}
+.tab_wrap li {
+  border: 1px solid #ddd;
+}
+.tab_wrap li.active {
+  background: #26c6da;
+  border: 1px solid #26c6da;
+}
+.tab_wrap li.active button {
+  color: #fff;
+}
+.tab_wrap li button {
+  width: 120px;
+  height: 40px;
 }
 
 .tooltip {

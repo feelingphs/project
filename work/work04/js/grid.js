@@ -259,15 +259,15 @@ function closePopup() {
     window.open('', '_self').close();
 }
 
-// 엑셀 다운로드
-const options = {
-    includeHiddenColumns: true,
-    onlySelected: true,
-    fileName: 'order_list',
-};
-const btnExport = document.querySelector('#gridExport');
-btnExport.addEventListener('click', function() {
-    //grid.export('csv');
-    //grid.export('xlsx');
-    gridOrd.export('xlsx', options);
-});
+// // 엑셀 다운로드
+// const options = {
+//     includeHiddenColumns: true,
+//     onlySelected: true,
+//     fileName: 'order_list',
+// };
+// const btnExport = document.querySelector('#gridExport');
+// btnExport.addEventListener('click', function() {
+//     //grid.export('csv');
+//     //grid.export('xlsx');
+//     gridOrd.export('xlsx', options);
+// });

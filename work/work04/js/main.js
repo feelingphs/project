@@ -208,49 +208,50 @@ document.addEventListener('click', function(e){
 });
 
 // 기간 버튼 활성화
-const periodGroup = document.querySelectorAll('.period_btnwrap');
 
-for(let i = 0; i < periodGroup.length; i++){
-	const periodBtn = periodGroup[i].querySelectorAll('button');
+const periodGroup = document.getElementById('period');
+const periodBtnWrap = periodGroup.querySelectorAll('.period_btnwrap');
+console.log(periodBtnWrap);
 
-	periodBtn.forEach(function(periodBtn){
-		periodBtn.addEventListener('click', function(e){
-			actRemove();
-			e.target.classList.add('active');
-		});
-	});
-	
-	function actRemove () {
-		for(let j = 0; j < periodBtn.length; j++){
-			periodBtn[j].classList.remove('active');		
-		}
-	}
+for(let i = 0; i < periodBtnWrap.length; i++){
+    const periodBtn = periodBtnWrap[i].querySelectorAll('button');
+
+    document.addEventListener('click', function(e){
+
+        if(e.target.parentNode.classList.contains('period_btnwrap')){
+            console.log('1');
+            for(let j = 0; j < periodBtn.length; j++){
+                periodBtn[j].classList.remove('active');
+                console.log('2');
+            }
+            e.target.classList.add('active');
+            console.log(e.target);
+        }
+    });
 }
+
+
 
 // tab
 const tabGroups = document.querySelectorAll('[data-role="tab"]');
-const tabPanelWrap = document.querySelectorAll('.tabcont_wrap');
 
-for(let i = 0; i < tabGroups.length; i++){
-    const tab = tabGroups[i].querySelectorAll('li');
-    const tabPanel = tabPanelWrap[i].querySelectorAll('[role="tabpanel"]');
+tabGroups.forEach(function(el, i){
+    const tabs = el.querySelectorAll('[role="tablist"]');
+    const tabContWrap = el.querySelectorAll('.tabcont_wrap');
 
-    tab.forEach(function(tab, idx) {
-        tab.addEventListener('click', function(e){
-            e.stopPropagation();
-            let currentTarget = e.currentTarget;
-            console.log(currentTarget);
-            console.log(idx);
-            
-            tab.classList.remove('active');
+    for(let i = 0 ; i < tabs.length; i++){
+        const tab = tabs[i].querySelectorAll('.tab_item');
+        const tabCont = tabContWrap[i].children;
 
-            // currentTarget.classList.add('active');
-
-            // if(currentTarget.classList.contains('active')){
-            // 	console.log(true);
-
-            // 	tabPanel[idx].classList.add('active');
-            // }
-        });
-    });
-}
+        for(let j = 0; j < tab.length; j++){
+            tab[j].addEventListener('click', function(){
+                for(let k= 0; k < tab.length; k++){
+                    tab[k].classList.remove('active');
+                    tabCont[k].classList.remove('active');
+                }
+                tab[j].classList.add('active');
+                tabCont[j].classList.add('active');
+            });
+        }
+    }
+});

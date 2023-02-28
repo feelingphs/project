@@ -269,6 +269,11 @@
     }
 }
 
+.price_wrap{
+    @include flex-row(center, left);
+    gap:8px;
+}
+
 .radio_wrap{
     @include flex-row(center, left);
     gap:24px;
@@ -374,8 +379,8 @@
     margin-top:0;
     .tab_cont{
         background:$color-wh;
-        border:1px solid #ddd;
-        padding:24px;
+        border-top:1px solid #ddd;
+        padding-top:24px;
         display:none;
         &.active{
             display:block;

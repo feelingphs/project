@@ -176,42 +176,74 @@
 						</ul>
 					</div>
 				</div>
-				<div class="btn_wrap">
-					<button class="btn_pri" aria-label="검색 버튼">검색</button>
-					<button class="btn_sec" aria-label="초기화 버튼">초기화</button>
-					<button class="btn_sec" aria-label="초기화 버튼" disabled>초기화</button>
-				</div>
-				<div id="period">
-					<div class="period_wrap">
-						<button class="btn_add" id="btn_add" aria-label="기간 추가 버튼"></button>
-						<div class="dropdown_wrap">
-							<div class="dropdown sm">
-								<button type="button" class="select">선택</button>
-								<ul class="select_option">
-									<li>주문일</li>
-									<li>결제완료일</li>
-									<li>상품명</li>
-								</ul>
+				<section>
+					<div class="btn_wrap">
+						<button class="btn_pri" aria-label="검색 버튼">검색</button>
+						<button class="btn_sec" aria-label="초기화 버튼">초기화</button>
+						<button class="btn_sec" aria-label="초기화 버튼" disabled>초기화</button>
+					</div>
+				</section>
+				<section>
+					<div id="period">
+						<div class="period_wrap">
+							<button class="btn_add" id="btn_add" aria-label="기간 추가 버튼"></button>
+							<div class="dropdown_wrap">
+								<div class="dropdown sm">
+									<button type="button" class="select">선택</button>
+									<ul class="select_option">
+										<li>주문일</li>
+										<li>결제완료일</li>
+										<li>상품명</li>
+									</ul>
+								</div>
+							</div>
+							<div class="input_area">
+								<input type="number" id="" name="" class="text_inp">
+							</div>
+							<span>~</span>
+							<div class="input_area">
+								<input type="number" id="" name="" class="text_inp">
+							</div>
+							<div class="period_btnwrap">
+								<button class="active">오늘</button>
+								<button>어제</button>
+								<button>3일</button>
+								<button>7일</button>
+								<button>1개월</button>
+								<button>3개월</button>
+								<button>6개월</button>
 							</div>
 						</div>
-						<div class="input_area">
-							<input type="number" id="" name="" class="text_inp">
-						</div>
-						<span>~</span>
-						<div class="input_area">
-							<input type="number" id="" name="" class="text_inp">
-						</div>
-						<div class="period_btnwrap">
-							<button class="active">오늘</button>
-							<button>어제</button>
-							<button>3일</button>
-							<button>7일</button>
-							<button>1개월</button>
-							<button>3개월</button>
-							<button>6개월</button>
-						</div>
 					</div>
-				</div>
+				</section>
+				<section class="tab grid_wrap" data-role="tab">
+					<ul class="tabs" role="tablist">
+						<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="tab_panel_01" tabindex="0">주문정보</button></li>
+						<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_02" tabindex="0">원 주문정보</button></li>
+					</ul>
+					<div class="tabcont_wrap">
+						<section class="tab_cont active" role="tabpanel" id="tab_panel_01" hidden="true" tabindex="-1">
+							11
+							<section class="tab grid_wrap" data-role="tab">
+								<ul class="tabs" role="tablist">
+									<li class="tab_item active"><button role="tab" aria-selected="true" aira-controls="tab_panel_01" tabindex="0">주문정보</button></li>
+									<li class="tab_item"><button role="tab" aria-selected="false" aira-controls="tab_panel_02" tabindex="0">원 주문정보</button></li>
+								</ul>
+								<div class="tabcont_wrap">
+									<section class="tab_cont active" role="tabpanel" id="tab_panel_01" hidden="true" tabindex="-1">
+										1-1
+									</section>
+									<section class="tab_cont" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="-1">
+										1-2
+									</section>
+								</div>
+							</section>
+						</section>
+						<section class="tab_cont" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="-1">
+							22
+						</section>
+					</div>
+				</section>
 			</div>
 		</main>
 	</div>

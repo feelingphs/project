@@ -117,7 +117,7 @@
     }
 }
 .total_search{
-    width:54%;
+    width:800px;
     margin:0 auto;
     padding:40px 0;
     @include flex-row;
@@ -161,7 +161,7 @@
                 position:absolute;
                 top:48px;
                 left:-1px;
-                border:1px solid #00317a;
+                border:1px solid $color-pri;
                 width:$w;
                 background:$color-wh;
                 border-top:1px solid $color-wh;

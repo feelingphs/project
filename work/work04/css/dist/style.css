@@ -825,7 +825,7 @@ header .utilmenu .user {
 }
 
 .total_search {
-  width: 54%;
+  width: 800px;
   margin: 0 auto;
   padding: 40px 0;
   display: flex;
@@ -877,7 +877,7 @@ header .utilmenu .user {
   position: absolute;
   top: 48px;
   left: -1px;
-  border: 1px solid #00317a;
+  border: 1px solid #34444c;
   width: 150px;
   background: #fff;
   border-top: 1px solid #fff;

@@ -15,6 +15,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js" defer></script>
     <script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/v3.4.0/tui-pagination.js" defer></script>
     <script src="https://uicdn.toast.com/grid/latest/tui-grid.js" defer></script>	
+	<script src="js/common.js" defer></script>
     <script src="js/main.js" defer></script>
 	<script src="js/grid.js" defer></script>
 
@@ -122,7 +123,7 @@
 			</nav>
 		</div>
 		<main id="content" class="content">
-			<h2 class="tit_h1">주문통합목록<button class="add_bmark active" aria-label="즐겨찾기 추가/해제 버튼"></button></h2> <!-- 즐겨찾기 추가된 경우 active 추가 -->
+			<h2 class="tit_h1">주문통합목록<button id="addBmark" class="add_bmark" aria-label="즐겨찾기 추가/해제 버튼"></button></h2> <!-- 즐겨찾기 추가된 경우 active 추가 -->
 			<div class="main_content">
 				<section class="search_wrap">
 					<div class="total_search">
@@ -191,84 +192,84 @@
 													<label for="chk_state06">배송중</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">배송완료</label>
+													<input type="checkbox" id="chk_state07" name="state" class="chkbox_inp">
+													<label for="chk_state07">배송완료</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">구매확정</label>
+													<input type="checkbox" id="chk_state08" name="state" class="chkbox_inp">
+													<label for="chk_state08">구매확정</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">취소신청</label>
+													<input type="checkbox" id="chk_state09" name="state" class="chkbox_inp">
+													<label for="chk_state09">취소신청</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">취소동의</label>
+													<input type="checkbox" id="chk_state10" name="state" class="chkbox_inp">
+													<label for="chk_state10">취소동의</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">취소환불중</label>
+													<input type="checkbox" id="chk_state11" name="state" class="chkbox_inp">
+													<label for="chk_state11">취소환불중</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">취소완료</label>
+													<input type="checkbox" id="chk_state12" name="state" class="chkbox_inp">
+													<label for="chk_state12">취소완료</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">취소거절</label>
+													<input type="checkbox" id="chk_state13" name="state" class="chkbox_inp">
+													<label for="chk_state13">취소거절</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">취소거절</label>
+													<input type="checkbox" id="chk_state14" name="state" class="chkbox_inp">
+													<label for="chk_state14">취소거절</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">교환신청</label>
+													<input type="checkbox" id="chk_state15" name="state" class="chkbox_inp">
+													<label for="chk_state15">교환신청</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">교환동의</label>
+													<input type="checkbox" id="chk_state16" name="state" class="chkbox_inp">
+													<label for="chk_state16">교환동의</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">교환상품수령</label>
+													<input type="checkbox" id="chk_state17" name="state" class="chkbox_inp">
+													<label for="chk_state17">교환상품수령</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">교환상품배송중</label>
+													<input type="checkbox" id="chk_state18" name="state" class="chkbox_inp">
+													<label for="chk_state18">교환상품배송중</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">교환완료</label>
+													<input type="checkbox" id="chk_state19" name="state" class="chkbox_inp">
+													<label for="chk_state19">교환완료</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">교환거절</label>
+													<input type="checkbox" id="chk_state20" name="state" class="chkbox_inp">
+													<label for="chk_state20">교환거절</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">반품신청</label>
+													<input type="checkbox" id="chk_state21" name="state" class="chkbox_inp">
+													<label for="chk_state21">반품신청</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">반품동의</label>
+													<input type="checkbox" id="chk_state22" name="state" class="chkbox_inp">
+													<label for="chk_state22">반품동의</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">반품상품수령</label>
+													<input type="checkbox" id="chk_state23" name="state" class="chkbox_inp">
+													<label for="chk_state23">반품상품수령</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp">
-													<label for="chk_state06">반품환불중</label>
+													<input type="checkbox" id="chk_state24" name="state" class="chkbox_inp">
+													<label for="chk_state24">반품환불중</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp" checked>
-													<label for="chk_state06">반품완료</label>
+													<input type="checkbox" id="chk_state25" name="state" class="chkbox_inp">
+													<label for="chk_state25">반품완료</label>
 												</div>
 												<div class="chkbox_area">
-													<input type="checkbox" id="chk_state06" name="state" class="chkbox_inp disabled" disabled>
-													<label for="chk_state06">반품거절</label>
+													<input type="checkbox" id="chk_state26" name="state" class="chkbox_inp disabled" disabled>
+													<label for="chk_state26">반품거절</label>
 												</div>
 											</div>
 										</td>
@@ -297,7 +298,7 @@
 														<input type="number" id="" name="" class="text_inp">
 													</div>
 													<div class="period_btnwrap">
-														<button class="active ddd">오늘</button>
+														<button class="active">오늘</button>
 														<button>어제</button>
 														<button>3일</button>
 														<button>7일</button>
@@ -527,9 +528,23 @@
 					</ul>
 					<div class="tabcont_wrap">
 						<section class="tab_cont active" role="tabpanel" id="tab_panel_01" hidden="true" tabindex="-1">
+							<div class="btn_wrap mb16">
+								<button type="button" id="gridExport" class="btn_icon btn_export" title="엑셀 다운로드 버튼" aria-label="엑셀 다운로드 버튼">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+										<path fill="none" d="M0 0h24v24H0z"/><path d="M2.859 2.877l12.57-1.795a.5.5 0 0 1 .571.495v20.846a.5.5 0 0 1-.57.495L2.858 21.123a1 1 0 0 1-.859-.99V3.867a1 1 0 0 1 .859-.99zM4 4.735v14.53l10 1.429V3.306L4 4.735zM17 19h3V5h-3V3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4v-2zm-6.8-7l2.8 4h-2.4L9 13.714 7.4 16H5l2.8-4L5 8h2.4L9 10.286 10.6 8H13l-2.8 4z" fill="rgba(255,255,255,1)"/>
+									</svg>
+								</button>
+							</div>
 							<div id="gridOrd" class="grid"></div>
 						</section>
 						<section class="tab_cont" role="tabpanel" id="tab_panel_02" hidden="true" tabindex="-1">
+							<div class="btn_wrap mb16">
+								<button type="button" id="gridExport" class="btn_icon btn_export" title="엑셀 다운로드 버튼" aria-label="엑셀 다운로드 버튼">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+										<path fill="none" d="M0 0h24v24H0z"/><path d="M2.859 2.877l12.57-1.795a.5.5 0 0 1 .571.495v20.846a.5.5 0 0 1-.57.495L2.858 21.123a1 1 0 0 1-.859-.99V3.867a1 1 0 0 1 .859-.99zM4 4.735v14.53l10 1.429V3.306L4 4.735zM17 19h3V5h-3V3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4v-2zm-6.8-7l2.8 4h-2.4L9 13.714 7.4 16H5l2.8-4L5 8h2.4L9 10.286 10.6 8H13l-2.8 4z" fill="rgba(255,255,255,1)"/>
+									</svg>
+								</button>
+							</div>
 							<div id="gridPrd" class="grid"></div>
 						</section>
 					</div>

@@ -1,90 +1,26 @@
 'use strict';
 
-// 현재 스크롤 위치
-window.addEventListener('scroll', function(){
-    let scrollX = this.scrollX;
-    let scrollY = this.scrollY;
-    console.log(scrollX);
-    console.log(scrollY);
-});
-
-// dimmed
-const dim = document.getElementById('dimmed');
-function dimmed () {
-    if (window.getComputedStyle(dim).display === "none") {
-        dim.style.display = 'block';
-    }else {
-        dim.style.display = 'none';
-    }
-};
-
-// 최상단 이동
-const topBtn = document.getElementById('topBtn');
-topBtn.addEventListener('click', function(){
-    window.scrollTo({left:0, top:0, behavior: 'smooth'});
-});
-
-// 즐겨찾기 토글
-const bookMarkOpen = document.getElementById('bookmark');
-const bookMarkList = document.getElementById('favorite');
-bookMarkOpen.addEventListener('click', () => {
-    dim.style.display = 'block';
-    bookMarkList.style.display = 'block';
-});
-document.addEventListener('click', (e) => {
-    const clickInside = bookMarkList.contains(e.target) || bookMarkOpen.contains(e.target);
-    if(!clickInside){
-        dim.style.display = 'none';
-        bookMarkList.style.display = 'none';
-    }
-});
-
-
-// lnb 열기, 닫기
-const leftMenu = document.getElementById('lnb');
-const switchBtn = document.getElementById('lnb_switch');
-
-switchBtn.addEventListener('click', function(){
-    if(this.classList.contains('openBtn')) {
-        this.classList.replace('openBtn', 'closeBtn');
-        leftMenu.classList.replace('close', 'open');
-    } else {
-        this.classList.replace('closeBtn', 'openBtn');
-        leftMenu.classList.replace('open', 'close');
-    }
-    setInterval(() => {
-        grid.refreshLayout();
-    }, );
-});
-
-// lnb 아코디언 메뉴
-const menu = document.querySelectorAll('.menu');
-menu.forEach(function(menu){
-    menu.addEventListener('click', function(e){
-        const parent = e.target.parentNode;
-        const ul = parent.querySelector('.depth');
-
-        if (ul != null){
-            if(parent.classList.contains('active')){
-                parent.classList.remove('active');
-                return slideUp(ul, 300);
-            } else{
-                parent.classList.add('active');
-                return slideDown(ul, 300);
-            }
-        } else {
-            menu.classList.add('active');
-        }
-    });
-});
-
 // 셀렉트 박스 클릭시 옵션 펼치기
-const select = document.querySelectorAll('.select');
-select.forEach(function(select){
-    const option = select.nextElementSibling;
-    select.addEventListener('click', function(){
-        slideToggle(option, 300);
-    });
+document.addEventListener('click', function(e){
+
+    const optGroup = e.target.nextElementSibling;
+    if(e.target.classList.contains('select')){
+        
+        slideToggle(optGroup);
+    }
+
+    const option = document.querySelectorAll('.select_option');
+    for (let i = 0; i < option.length; i++) {
+        const optionList = option[i].querySelectorAll('li');
+        for (let j = 0; j < option.length; j++) {
+            if(e.target == optionList[j]){
+                const select = optionList[j].parentElement.previousElementSibling;
+                select.textContent = '';
+                select.textContent += optionList[j].textContent;
+                slideUp(option[i]);
+            }
+        }
+    }
 });
 
 
@@ -201,6 +137,7 @@ periodDummy += '</div>';
 document.addEventListener('click', function(e){
     if(e.target && e.target.id == 'btn_add'){
         period.innerHTML += periodDummy;
+        periodBtn();
     }
     if(e.target && e.target.id == 'btn_del'){
         e.target.parentNode.remove();
@@ -208,29 +145,22 @@ document.addEventListener('click', function(e){
 });
 
 // 기간 버튼 활성화
+function periodBtn() {
+    const periodBtnWrap = document.querySelectorAll('.period_btnwrap');
 
-const periodGroup = document.getElementById('period');
-const periodBtnWrap = periodGroup.querySelectorAll('.period_btnwrap');
-console.log(periodBtnWrap);
+    periodBtnWrap.forEach(function(el, i){
+        const periodBtn = periodBtnWrap[i].querySelectorAll('button');
 
-for(let i = 0; i < periodBtnWrap.length; i++){
-    const periodBtn = periodBtnWrap[i].querySelectorAll('button');
-
-    document.addEventListener('click', function(e){
-
-        if(e.target.parentNode.classList.contains('period_btnwrap')){
-            console.log('1');
-            for(let j = 0; j < periodBtn.length; j++){
-                periodBtn[j].classList.remove('active');
-                console.log('2');
-            }
-            e.target.classList.add('active');
-            console.log(e.target);
-        }
+        periodBtn.forEach(function(el, j){
+            periodBtn[j].addEventListener('click', function(e){
+                for(let k = 0; k < periodBtn.length; k++){
+                    periodBtn[k].classList.remove('active');
+                }
+                e.target.classList.add('active');
+            });
+        });
     });
-}
-
-
+}periodBtn();
 
 // tab
 const tabGroups = document.querySelectorAll('[data-role="tab"]');

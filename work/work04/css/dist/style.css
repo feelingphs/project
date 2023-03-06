@@ -741,7 +741,7 @@ header .utilmenu .user {
 }
 
 .sales {
-  width: calc(50% - 20px);
+  width: 100%;
   background: #fff;
   height: 400px;
 }
@@ -751,12 +751,12 @@ header .utilmenu .user {
 
 .group_vertical {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: calc(50% - 20px);
+  gap: 0 40px;
+  width: 100%;
+  margin-top: 0;
 }
 .group_vertical .vertical {
-  width: 100%;
+  width: calc(50% - 20px);
 }
 .group_vertical .vertical .group_per {
   display: flex;

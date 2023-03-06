@@ -338,6 +338,10 @@ body {
   width: 100%;
   min-width: auto;
   font-family: "Roboto", "NanumBarunGothic", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #263238;
+  font-weight: 400;
 }
 
 .popup_content {

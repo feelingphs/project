@@ -148,9 +148,9 @@ const gridOrd = new tui.Grid({
     draggable: false,
     contextMenu: null,
     rowHeaders: [
-        {
-            type: 'rowNum'
-        },
+        // {
+        //     type: 'rowNum'
+        // },
         {
             type: 'checkbox',
             header: `

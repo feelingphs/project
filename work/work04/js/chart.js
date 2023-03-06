@@ -24,7 +24,9 @@ const data = {
             type: 'bar',
             data: ['1234', '2345', '467', '1234'],
             backgroundColor: '#34444c',
-            borderRadus: 10,
+            barThickness: 16,
+            borderRadius: 4,
+            borderSkipped: true,
         },
     ],
 }
@@ -32,21 +34,17 @@ const data = {
 const myChart = new Chart(ctx, {    
     type: 'line',
     data: data,
-    plugins: [ChartDataLabels],
+    // plugins: [ChartDataLabels],
     options: {
         maintainAspectRatio: false,
         plugins: {
             title: {
-                text: 'dd',
+                text: '매출현황',
                 display:false
-            }
-        },
-        elements: {
-            bar: {
-                backgroundColor: '#fff',
-                borderColor: '#fff',
-                borderWidth: 5
-            }
+            },
+            legend: {
+				position: 'top',
+			}
         },
         scales: {
             x: {
@@ -54,7 +52,7 @@ const myChart = new Chart(ctx, {
                 title: {
                     display:true,
                     text : 'Day',
-                    color: '#ddd',
+                    color: '#34444c',
                     font: {
                         size: 16,
                     },
@@ -66,18 +64,13 @@ const myChart = new Chart(ctx, {
                 title:{
                     display: true,
                     text: '매출',
-                    color:'#000',
+                    color:'#34444c',
                     font: {
                         size: 18,
                     },
                     padding: {top: 0, left: 0, right: 0, bottom: 0}
                 },
                 beginAtZero: true,
-                min: 0,
-                max: 3000,
-                ticks:{
-                    stepSize: 500,
-                }
             }
         },
     }

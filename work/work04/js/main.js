@@ -5,7 +5,6 @@ document.addEventListener('click', function(e){
 
     const optGroup = e.target.nextElementSibling;
     if(e.target.classList.contains('select')){
-        
         slideToggle(optGroup);
     }
 

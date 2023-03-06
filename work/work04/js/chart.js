@@ -12,7 +12,7 @@ const data = {
     labels: labels,
     datasets: [
         {
-            label: 'line',
+            label: '주문',
             type: 'line',
             data: [235, 357, 1234, 678, 134, 2345],
             backgroundColor: '#26c6da',
@@ -20,7 +20,7 @@ const data = {
             borderWidth: 1,
         },
         {
-            label: 'bar',
+            label: '매출',
             type: 'bar',
             data: ['1234', '2345', '467', '1234'],
             backgroundColor: '#34444c',

@@ -46,6 +46,14 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// 계정 버튼 클릭시
+const accountBtn = document.getElementById('accoundBtn');
+const accountLayer = document.getElementById('account');
+
+accountBtn.addEventListener('click', function() {
+    slideToggle(accountLayer);
+});
+
 // lnb 열기, 닫기
 const leftMenu = document.getElementById('lnb');
 const switchBtn = document.getElementById('lnb_switch');

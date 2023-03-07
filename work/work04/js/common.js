@@ -28,8 +28,8 @@ topBtn.addEventListener('click', function(){
 const bookMarkOpen = document.getElementById('bookmark');
 const bookMarkList = document.getElementById('favorite');
 bookMarkOpen.addEventListener('click', () => {
-    dim.style.display = 'block';
-    bookMarkList.style.display = 'block';
+    slideToggle(bookMarkList);
+    dimmed();
 });
 document.addEventListener('click', (e) => {
     const clickInside = bookMarkList.contains(e.target) || bookMarkOpen.contains(e.target);
@@ -52,6 +52,7 @@ const accountLayer = document.getElementById('account');
 
 accountBtn.addEventListener('click', function() {
     slideToggle(accountLayer);
+    dimmed();
 });
 
 // lnb 열기, 닫기
@@ -67,7 +68,7 @@ switchBtn.addEventListener('click', function(){
         leftMenu.classList.replace('open', 'close');
     }
     setInterval(() => {
-        grid.refreshLayout();
+        gridOrd.refreshLayout();
     }, );
 });
 

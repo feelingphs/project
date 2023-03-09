@@ -20,6 +20,18 @@ function dimmed () {
 
 // 최상단 이동
 const topBtn = document.getElementById('topBtn');
+
+window.addEventListener('scroll', function(){
+    let scrollX = this.scrollX;
+    let scrollY = this.scrollY;
+
+    if(scrollY > 100){
+        topBtn.style.display = 'block';
+    }else {
+        topBtn.style.display = 'none';
+    }
+});
+
 topBtn.addEventListener('click', function(){
     window.scrollTo({left:0, top:0, behavior: 'smooth'});
 });

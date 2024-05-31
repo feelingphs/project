@@ -47,7 +47,7 @@ a,input,img{outline:none;selector-dummy:expression(this.hideFocus=true);}
 .floR{float:right;}
 
 
-body { font-size: 18px; color: #000; line-height: 1; min-width: 1200px; max-width: 1440px; } 
+body { font-size: 18px; color: #000; line-height: 1; min-width: 1200px; max-width: 1440px; margin:0 auto; } 
 
 /* skip */
 #skip a { position:absolute; top:0px; left:-9999px; z-index:100; } 
